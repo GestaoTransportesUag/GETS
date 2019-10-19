@@ -3,12 +3,11 @@ class CreateVeiculos < ActiveRecord::Migration[5.1]
     create_table :veiculos do |t|
       t.string :placa
       t.string :modelo
-      t.int :ano
+      t.integer :ano
       t.string :cor
-      t.real :quilometragem
+      t.bigint :quilometragem
       t.boolean :manutencaoEmDia
       t.boolean :alocado
-
       t.timestamps
     end
   end

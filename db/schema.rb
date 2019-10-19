@@ -10,6 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20191019212808) do
+
+  create_table "motorista", force: :cascade do |t|
+    t.bigint "cpf"
+    t.string "nome"
+    t.bigint "telefone"
+    t.integer "numeroDeHoras"
+    t.boolean "bancoDeHoras"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "usuarios", force: :cascade do |t|
+    t.integer "cpf", limit: 8
+    t.string "nome"
+    t.string "senha"
+    t.string "email"
+    t.integer "telefone"
+    t.boolean "capacidadeDeGerencia"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "veiculos", force: :cascade do |t|
+    t.string "placa"
+    t.string "modelo"
+    t.integer "ano"
+    t.string "cor"
+    t.bigint "quilometragem"
+    t.boolean "manutencaoEmDia"
+    t.boolean "alocado"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

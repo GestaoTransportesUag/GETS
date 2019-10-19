@@ -4,6 +4,4 @@ class Veiculo < ApplicationRecord
   validates :ano, presence: true, numericality: true
   validates :cor, presence: true
   validates :quilometragem, presence: true, numericality: true
-  validates :manutencaoEmDia, presence: true
-  validates :alocado, presence: true
 end

@@ -4,5 +4,4 @@ class Usuario < ApplicationRecord
   validates :senha, presence: true, length: {is: 6}
   validates :email, presence: true
   validates :telefone, presence: true, numericality: true
-  validates :capacidadeDeGerencia, presence: true
 end
