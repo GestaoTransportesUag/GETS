@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Placa:</strong>
+  <%= @veiculo.placa %>
+</p>
+
+<p>
+  <strong>Modelo:</strong>
+  <%= @veiculo.modelo %>
+</p>
+
+<p>
+  <strong>Ano:</strong>
+  <%= @veiculo.ano %>
+</p>
+
+<p>
+  <strong>Cor:</strong>
+  <%= @veiculo.cor %>
+</p>
+
+<p>
+  <strong>Quilometragem:</strong>
+  <%= @veiculo.quilometragem %>
+</p>
+
+<p>
+  <strong>Manutencaoemdia:</strong>
+  <%= @veiculo.manutencaoEmDia %>
+</p>
+
+<p>
+  <strong>Alocado:</strong>
+  <%= @veiculo.alocado %>
+</p>
+
+<%= link_to 'Edit', edit_veiculo_path(@veiculo) %> |
+<%= link_to 'Back', veiculos_path %>
