@@ -3,5 +3,4 @@ class Motoristum < ApplicationRecord
   validates :nome, presence: true
   validates :telefone, presence: true, numericality: true
   validates :numeroDeHoras, presence: true, numericality: true
-  validates :bancoDeHoras, presence: true, numericality: true
 end
