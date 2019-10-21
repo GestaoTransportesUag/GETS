@@ -4,13 +4,15 @@ class MotoristaController < ApplicationController
   # GET /motorista
   # GET /motorista.json
   def index
-    @motorista = Motoristum.all
+    #@motorista = Motoristum.all
+    @motorista =Motoristum.order(:nome)
   end
 
   # GET /motorista/1
   # GET /motorista/1.json
   def show
     @motoristum = Motoristum.find(params[:id])
+
   end
 
   # GET /motorista/new
