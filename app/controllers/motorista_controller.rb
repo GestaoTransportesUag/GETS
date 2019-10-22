@@ -10,6 +10,7 @@ class MotoristaController < ApplicationController
   # GET /motorista/1
   # GET /motorista/1.json
   def show
+    @motorista = Motorista.find(params[:id])
   end
 
   # GET /motorista/new
@@ -19,6 +20,7 @@ class MotoristaController < ApplicationController
 
   # GET /motorista/1/edit
   def edit
+    @motorista = Motorista.find(params[:id])
   end
 
   # POST /motorista
@@ -59,6 +61,46 @@ class MotoristaController < ApplicationController
       format.html { redirect_to motorista_index_url, notice: 'Motorista was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def getCPF
+    return @motorista.cpf
+  end
+
+  def setCPF(novocpf)
+    @motorista.cpf = novocpf
+  end
+
+  def getNome
+    return @motorista.nome
+  end
+
+  def setNome(novonome)
+    @motorista.nome = novonome
+  end
+
+  def getTelefone
+    return @motorista.telefone
+  end
+
+  def setTelefone(novotelefone)
+    @motorista.telefone = novotelefone
+  end
+
+  def getNumeroDeHoras
+    return @motorista.numeroDeHoras
+  end
+
+  def setNumeroDeHoras(novoNumeroDeHoras)
+    @motorista.numeroDeHoras = novoNumeroDeHoras
+  end
+
+  def getBancoDeHoras
+    return @motorista.bancoDeHoras
+  end
+
+  def setBancoDeHoras(novoBancoDeHoras)
+    @motorista.bancoDeHoras = novoBancoDeHoras
   end
 
   private
