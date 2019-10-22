@@ -63,6 +63,62 @@ class VeiculosController < ApplicationController
     end
   end
 
+  def getPlaca
+    return @veiculo.placa
+  end
+
+  def setPlaca(novaPlaca)
+    @veiculo.placa = novaPlaca
+  end
+
+  def getModelo
+    return @veiculo.modelo
+  end
+
+  def setModelo(novoModelo)
+    @veiculo.modelo = novoModelo
+  end
+
+  def getAno
+    return @veiculo.ano
+  end
+
+  def setAno(novoAno)
+    @veiculo.ano = novoAno
+  end
+
+  def getCor
+    return @veiculo.cor
+  end
+
+  def setCor(novaCor)
+    @veiculo.cor = novaCor
+  end
+
+  def getQuilometragem
+    return @veiculo.quilometragem
+  end
+
+  def setQuilometragem(novaQuilometragem)
+    @veiculo.quilometragem = novaQuilometragem
+  end
+
+  def getManutencaoEmDia
+    return @veiculo.manutencaoEmDia
+  end
+
+  def setManutencaoEmDia(novaManutencaoEmDia)
+    @veiculo.manutencaoEmDia = novaManutencaoEmDia
+  end
+
+  def getAlocado
+    return @veiculo.alocado
+  end
+
+  def setAlocado(novoAlocado)
+    @veiculo.alocado = novoAlocado
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_veiculo
