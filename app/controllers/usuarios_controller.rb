@@ -63,6 +63,54 @@ class UsuariosController < ApplicationController
     end
   end
 
+  def getCPF
+    return @usuario.cpf
+  end
+
+  def setCPF(novocpf)
+    @usuario.cpf = novocpf
+  end
+
+  def getNome
+    return @usuario.nome
+  end
+
+  def setNome(novonome)
+    @usuario.nome = novonome
+  end
+
+  def getSenha
+    return @usuario.senha
+  end
+
+  def setSenha(novasenha)
+    @usuario.senha = novasenha
+  end
+
+  def getEmail
+    return @usuario.email
+  end
+
+  def setEmail(novoemail)
+    @usuario.email = novoemail
+  end
+
+  def getTelefone
+    return @usuario.telefone
+  end
+
+  def setTelefone(novotelefone)
+    @usuario.telefone = novotelefone
+  end
+
+  def getCapacidadeDeGerencia
+    return @usuario.capacidadeDeGerencia
+  end
+
+  def setCapacidadeDeGerencia(novagerencia)
+    @usuario.capacidadeDeGerencia = novagerencia
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_usuario
