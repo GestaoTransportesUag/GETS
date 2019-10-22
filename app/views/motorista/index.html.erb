@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Motorista</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cpf</th>
+      <th>Nome</th>
+      <th>Numerodehoras</th>
+      <th>Bancodehoras</th>
+      <th>Telefone</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @motorista.each do |motorista| %>
+      <tr>
+        <td><%= motorista.cpf %></td>
+        <td><%= motorista.nome %></td>
+        <td><%= motorista.numeroDeHoras %></td>
+        <td><%= motorista.bancoDeHoras %></td>
+        <td><%= motorista.telefone %></td>
+        <td><%= link_to 'Show', motorista %></td>
+        <td><%= link_to 'Edit', edit_motorista_path(motorista) %></td>
+        <td><%= link_to 'Destroy', motorista, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Motorista', new_motorista_path %>
