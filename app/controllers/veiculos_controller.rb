@@ -4,7 +4,7 @@ class VeiculosController < ApplicationController
   # GET /veiculos
   # GET /veiculos.json
   def index
-    @veiculos = Veiculo.all
+    @veiculos = Veiculo.search(params[:search])
   end
 
   # GET /veiculos/1
@@ -127,6 +127,6 @@ class VeiculosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def veiculo_params
-      params.require(:veiculo).permit(:placa, :modelo, :ano, :cor, :quilometragem, :manutencaoEmDia, :alocado)
+      params.require(:veiculo).permit(:placa, :modelo, :ano, :cor, :quilometragem, :manutencaoEmDia, :alocado, :search)
     end
 end
