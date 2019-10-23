@@ -12,3 +12,4 @@ Feature: Veiculo
     And eu preencho os campos de placa com "HX576CA", modelo com "Caminhonete", ano com "1998", cor com "Vermelho" e quilometragem com "10000"
     And eu clico em Create Veiculo
     Then eu devo ver que o veiculo com placa "HX576CA" foi adicionado corretamente
+
