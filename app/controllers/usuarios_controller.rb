@@ -4,7 +4,7 @@ class UsuariosController < ApplicationController
   # GET /usuarios
   # GET /usuarios.json
   def index
-    @usuarios = Usuario.all
+    @usuarios = Usuario.search(params[:search])
   end
 
   # GET /usuarios/1
@@ -119,6 +119,6 @@ class UsuariosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def usuario_params
-      params.require(:usuario).permit(:cpf, :nome, :senha, :email, :telefone, :capacidadeDeGerencia)
+      params.require(:usuario).permit(:cpf, :nome, :senha, :email, :telefone, :capacidadeDeGerencia, :search)
     end
 end
