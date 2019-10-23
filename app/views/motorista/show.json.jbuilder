@@ -1,1 +1,1 @@
-json.partial! "motorista/motoristum", motoristum: @motoristum
+json.partial! "motorista/motorista", motorista: @motorista

@@ -2,28 +2,28 @@
 
 <p>
   <strong>Cpf:</strong>
-  <%= @motoristum.cpf %>
+  <%= @motorista.cpf %>
 </p>
 
 <p>
   <strong>Nome:</strong>
-  <%= @motoristum.nome %>
-</p>
-
-<p>
-  <strong>Telefone:</strong>
-  <%= @motoristum.telefone %>
+  <%= @motorista.nome %>
 </p>
 
 <p>
   <strong>Numerodehoras:</strong>
-  <%= @motoristum.numeroDeHoras %>
+  <%= @motorista.numeroDeHoras %>
 </p>
 
 <p>
   <strong>Bancodehoras:</strong>
-  <%= @motoristum.bancoDeHoras %>
+  <%= @motorista.bancoDeHoras %>
 </p>
 
-<%= link_to 'Edit', edit_motoristum_path(@motoristum) %> |
-<%= link_to 'Back', motorista_path %>
+<p>
+  <strong>Telefone:</strong>
+  <%= @motorista.telefone %>
+</p>
+
+<%= link_to 'Edit', edit_motorista_path(@motorista) %> |
+<%= link_to 'Back', motorista_index_path %>

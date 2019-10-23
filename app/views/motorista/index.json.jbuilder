@@ -1,1 +1,1 @@
-json.array! @motorista, partial: "motorista/motoristum", as: :motoristum
+json.array! @motorista, partial: "motorista/motorista", as: :motorista

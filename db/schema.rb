@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191019212808) do
+ActiveRecord::Schema.define(version: 20191021195538) do
 
   create_table "motorista", force: :cascade do |t|
     t.bigint "cpf"
     t.string "nome"
-    t.bigint "telefone"
     t.integer "numeroDeHoras"
     t.boolean "bancoDeHoras"
+    t.bigint "telefone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20191019212808) do
     t.string "nome"
     t.string "senha"
     t.string "email"
-    t.integer "telefone"
+    t.integer "telefone", limit: 8
     t.boolean "capacidadeDeGerencia"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

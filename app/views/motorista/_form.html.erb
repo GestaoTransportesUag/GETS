@@ -1,10 +1,10 @@
-<%= form_with(model: motoristum, local: true) do |form| %>
-  <% if motoristum.errors.any? %>
+<%= form_with(model: motorista, local: true) do |form| %>
+  <% if motorista.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(motoristum.errors.count, "error") %> prohibited this motoristum from being saved:</h2>
+      <h2><%= pluralize(motorista.errors.count, "error") %> prohibited this motorista from being saved:</h2>
 
       <ul>
-      <% motoristum.errors.full_messages.each do |message| %>
+      <% motorista.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -13,27 +13,27 @@
 
   <div class="field">
     <%= form.label :cpf %>
-    <%= form.text_field :cpf, id: :motoristum_cpf %>
+    <%= form.text_field :cpf, id: :motorista_cpf %>
   </div>
 
   <div class="field">
     <%= form.label :nome %>
-    <%= form.text_field :nome, id: :motoristum_nome %>
-  </div>
-
-  <div class="field">
-    <%= form.label :telefone %>
-    <%= form.text_field :telefone, id: :motoristum_telefone %>
+    <%= form.text_field :nome, id: :motorista_nome %>
   </div>
 
   <div class="field">
     <%= form.label :numeroDeHoras %>
-    <%= form.text_field :numeroDeHoras, id: :motoristum_numeroDeHoras %>
+    <%= form.number_field :numeroDeHoras, id: :motorista_numeroDeHoras %>
   </div>
 
   <div class="field">
     <%= form.label :bancoDeHoras %>
-    <%= form.text_field :bancoDeHoras, id: :motoristum_bancoDeHoras %>
+    <%= form.check_box :bancoDeHoras, id: :motorista_bancoDeHoras %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telefone %>
+    <%= form.text_field :telefone, id: :motorista_telefone %>
   </div>
 
   <div class="actions">

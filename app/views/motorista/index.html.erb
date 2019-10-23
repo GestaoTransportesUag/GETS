@@ -7,24 +7,24 @@
     <tr>
       <th>Cpf</th>
       <th>Nome</th>
-      <th>Telefone</th>
       <th>Numerodehoras</th>
       <th>Bancodehoras</th>
+      <th>Telefone</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @motorista.each do |motoristum| %>
+    <% @motorista.each do |motorista| %>
       <tr>
-        <td><%= motoristum.cpf %></td>
-        <td><%= motoristum.nome %></td>
-        <td><%= motoristum.telefone %></td>
-        <td><%= motoristum.numeroDeHoras %></td>
-        <td><%= motoristum.bancoDeHoras %></td>
-        <td><%= link_to 'Show', motoristum %></td>
-        <td><%= link_to 'Edit', edit_motoristum_path(motoristum) %></td>
-        <td><%= link_to 'Destroy', motoristum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= motorista.cpf %></td>
+        <td><%= motorista.nome %></td>
+        <td><%= motorista.numeroDeHoras %></td>
+        <td><%= motorista.bancoDeHoras %></td>
+        <td><%= motorista.telefone %></td>
+        <td><%= link_to 'Show', motorista %></td>
+        <td><%= link_to 'Edit', edit_motorista_path(motorista) %></td>
+        <td><%= link_to 'Destroy', motorista, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Motoristum', new_motoristum_path %>
+<%= link_to 'New Motorista', new_motorista_path %>
