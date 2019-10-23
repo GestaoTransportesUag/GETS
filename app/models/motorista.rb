@@ -3,4 +3,17 @@ class Motorista < ApplicationRecord
   validates :nome, presence: true
   validates :telefone, presence: true, numericality: true
   validates :numeroDeHoras, presence: true, numericality: true
+
+  def self.search(search)
+    if search
+      motorista = Motorista.find_by(nome: search)
+      if motorista
+        self.where(nome: motorista.nome)
+      else
+        Motorista.all
+      end
+    else
+      Motorista.all
+    end
+  end
 end

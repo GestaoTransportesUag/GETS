@@ -4,7 +4,7 @@ class MotoristaController < ApplicationController
   # GET /motorista
   # GET /motorista.json
   def index
-    @motorista = Motorista.all
+    @motorista = Motorista.search(params[:search])
   end
 
   # GET /motorista/1
