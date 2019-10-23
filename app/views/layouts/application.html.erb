@@ -6,9 +6,33 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
+    <header class="container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <%= link_to "Página Inicial", welcome_index_path, class: "navbar-brand" %>
+          </div>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to 'Veiculos', veiculos_path %><br /></li>
+            <li><%= link_to 'Usuarios', usuarios_path %><br /></li>
+            <li><%= link_to 'Motoristas', motorista_index_path %></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <section class="container">
+      <div id="flash">
+        <% flash.each do |key, value| %>
+          <div class="flash alert <%= alert_class(key) %>"><%= value %></div>
+        <% end %>
+      </div>
+    </section>
     <%= yield %>
   </body>
 </html>

@@ -11,11 +11,11 @@
   <% @veiculos.each do |veiculo| %>
     <ul>
       <li><%= link_to veiculo.placa , veiculo_path(veiculo)%></li>
+      <td><%= link_to "Remover", veiculo, data: {:confirm => "Deseja remover o veículo?"}, :method => :delete %></td>
     </ul>
   <% end %>
 <br>
 
 <p>
   <%= link_to 'Novo Veiculo', new_veiculo_path %><br />
-  <%= link_to 'Voltar', welcome_index_path %><br />
 </p>
