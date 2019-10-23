@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cpf: 
+  nome: MyString
+  numeroDeHoras: 1
+  bancoDeHoras: false
+  telefone: 
+
+two:
+  cpf: 
+  nome: MyString
+  numeroDeHoras: 1
+  bancoDeHoras: false
+  telefone: 

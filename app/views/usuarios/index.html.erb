@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
+<div class = "title-container">
+  <h1>Usuarios</h1>
+</div>
 
-<h1>Usuarios
   <ul>
     <%= form_tag usuarios_path, :method => 'get' do %>
       <%= text_field_tag :search, params[:search] %>
@@ -10,13 +12,14 @@
 
   <% @usuarios.each do |usuario| %>
     <ul>
-      <li><%= link_to usuario.nome, usuario_path(usuario) %></li>
-      <td><%= link_to "Remover", usuario, data: {:confirm => "Deseja remover o usuário?"}, :method => :delete %></td>
+      <li>
+        <%= link_to usuario.nome, usuario_path(usuario), class: "btn btn-default" %>
+        <%= link_to "Remover", usuario, data: {:confirm => "Deseja remover o usuário?"}, :method => :delete, class: "btn btn-default" %>
+      </li>
     </ul>
   <% end %>
 <br>
 
 <p>
-  <%= link_to 'Novo Usuario', new_usuario_path %><br />
-  <%= link_to 'Voltar', welcome_index_path %><br />
+  <%= link_to 'Novo Usuario', new_usuario_path, class: "btn btn-default" %><br />
 </p>
