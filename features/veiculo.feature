@@ -13,3 +13,10 @@ Feature: Veiculo
     And eu clico em Create Veiculo
     Then eu devo ver que o veiculo com placa "HX576CA" foi adicionado corretamente
 
+  Scenario: remover corretamente um veiculo
+    Given eu estou na pagina inicial
+    When eu clico no link chamado Veiculos
+    And estou na pagina que lista veiculos
+    And eu vejo um veiculo com placa "HX576CA" ja existente
+    And eu clico no botao Remover
+    Then eu devo ver que o veiculo com a placa "HX576CA" foi removido corretamente
