@@ -4,7 +4,7 @@ class MotoristaTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
-  test 'Nao deve salvar um motorista sem cpf' do
+  test 'Nao deve salvar um motorista sem atributos' do
     motorista = Motorista.new
     assert_not motorista.save
   end
