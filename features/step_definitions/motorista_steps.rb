@@ -29,3 +29,18 @@ Then("eu devo ver que o motorista com nome {string} foi adicionado corretamente"
   visit '/motorista'
   expect(page).to have_selector(:link_or_button, nome)
 end
+
+When("eu vejo um motorista com nome {string} ja existente") do |nome|
+  click_link 'Novo Motorista'
+  fill_in 'motorista[cpf]', :with => '70526991410'
+  fill_in 'motorista[nome]', :with => nome
+  fill_in 'motorista[numeroDeHoras]', :with => '50'
+  fill_in 'motorista[telefone]', :with => '99836613'
+  click_button 'Create Motorista'
+  visit '/motorista'
+  expect(page).to have_selector(:link_or_button, nome)
+end
+
+Then("eu devo ver que o motorista com nome {string} foi removido corretamente") do |nome|
+  expect(page).not_to have_selector(:link_or_button, nome)
+end
