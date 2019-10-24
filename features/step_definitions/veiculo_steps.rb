@@ -54,4 +54,3 @@ end
 Then("eu devo ver que o veiculo com a placa {string} foi removido corretamente") do |placa|
   expect(page).not_to have_selector(:link_or_button, placa)
 end
-
