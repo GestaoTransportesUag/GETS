@@ -44,3 +44,18 @@ end
 Then("eu devo ver que o motorista com nome {string} foi removido corretamente") do |nome|
   expect(page).not_to have_selector(:link_or_button, nome)
 end
+
+When("eu clico no botao com o nome {string} referente ao motorista") do |nome|
+  click_link nome
+end
+
+When("eu clico no botao Update Motorista") do
+  click_button 'Update Motorista'
+end
+
+Then("eu devo ver que o motorista agora tem o CPF {string}, nome {string}, numero de horas {string} e telefone {string}") do |cpf, nome, numeroDeHoras, telefone|
+  expect(page).to have_content(cpf)
+  expect(page).to have_content(nome)
+  expect(page).to have_content(numeroDeHoras)
+  expect(page).to have_content(telefone)
+end
