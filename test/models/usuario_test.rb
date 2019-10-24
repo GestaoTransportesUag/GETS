@@ -4,7 +4,7 @@ class UsuarioTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
-  test 'Nao deve salvar um usuario sem cpf' do
+  test 'Nao deve salvar um usuario sem atributos' do
     usuario = Usuario.new
     assert_not usuario.save
   end
