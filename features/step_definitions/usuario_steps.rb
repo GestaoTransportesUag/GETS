@@ -27,5 +27,22 @@ When("eu clico em Create Usuario") do
 end
 
 Then("eu devo ver que o usuario com nome {string} foi adicionado corretamente") do |nome|
+  visit '/usuarios'
+  expect(page).to have_selector(:link_or_button, nome)
+end
+
+When("eu vejo um usuario com nome {string} ja existente") do |nome|
+  click_link 'Novo Usuario'
+  fill_in 'usuario[cpf]', :with => '70526991410'
+  fill_in 'usuario[nome]', :with => nome
+  fill_in 'usuario[senha]', :with => '123456'
+  fill_in 'usuario[email]', :with => 'arnaldovitorbarros@gmail.com'
+  fill_in 'usuario[telefone]', :with => '99836613'
+  click_button 'Create Usuario'
+  visit '/usuarios'
+  expect(page).to have_selector(:link_or_button, nome)
+end
+
+Then("eu devo ver que o usuario com nome {string} foi removido corretamente") do |nome|
   expect(page).not_to have_selector(:link_or_button, nome)
 end
