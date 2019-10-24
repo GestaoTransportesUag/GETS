@@ -35,3 +35,22 @@ When("eu devo ver que o veiculo com placa {string} foi adicionado corretamente")
   expect(page).to have_selector(:link_or_button, placa)
 end
 
+When("eu vejo um veiculo com placa {string} ja existente") do |placa|
+  click_link 'Novo Veiculo'
+  fill_in 'veiculo[placa]', :with => placa
+  fill_in 'veiculo[modelo]', :with => 'caminhonete'
+  fill_in 'veiculo[ano]', :with => '1198'
+  fill_in 'veiculo[cor]', :with => 'azul'
+  fill_in 'veiculo[quilometragem]', :with => '1000'
+  click_button 'Create Veiculo'
+  visit '/veiculos'
+  expect(page).to have_selector(:link_or_button, placa)
+end
+
+When("eu clico no botao Remover") do
+  click_link 'Remover'
+end
+
+Then("eu devo ver que o veiculo com a placa {string} foi removido corretamente") do |placa|
+  expect(page).not_to have_selector(:link_or_button, placa)
+end
