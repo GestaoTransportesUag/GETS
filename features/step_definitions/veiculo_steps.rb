@@ -54,3 +54,35 @@ end
 Then("eu devo ver que o veiculo com a placa {string} foi removido corretamente") do |placa|
   expect(page).not_to have_selector(:link_or_button, placa)
 end
+
+When("eu clico no botao com o nome da placa {string}") do |placa|
+  click_link placa
+end
+
+When("eu clico no botao Update Veiculo") do
+  click_button 'Update Veiculo'
+end
+
+Then("eu devo ver que o veiculo agora tem a placa {string}, modelo {string}, ano {string}, cor {string} e quilometragem {string}") do |placa, modelo, ano, cor, quilometragem|
+  expect(page).to have_content(placa)
+  expect(page).to have_content(modelo)
+  expect(page).to have_content(ano)
+  expect(page).to have_content(cor)
+  expect(page).to have_content(quilometragem)
+end
+
+When("eu clico no botao Editar") do
+  click_link 'Editar'
+end
+
+Then("eu devo ver que o veiculo com a placa {string} tem as informacoes corretas") do |placa|
+  expect(page).to have_content(placa)
+  expect(page).to have_content('caminhonete')
+  expect(page).to have_content('1198')
+  expect(page).to have_content('azul')
+  expect(page).to have_content('1000')
+end
+
+Then("eu vejo uma mensagem de erro indicando que o veiculo nao pode ser cadastrado") do
+  expect(page).to have_content('Placa is the wrong length')
+end
