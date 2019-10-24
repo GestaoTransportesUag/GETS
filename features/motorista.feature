@@ -32,3 +32,10 @@ Feature: Motorista
     And eu clico no botao Update Motorista
     Then eu devo ver que o motorista agora tem o CPF "70235687110", nome "Alan", numero de horas "9" e telefone "88725512"
 
+  Scenario: visualizar as informacoes de um motorista
+    Given eu estou na pagina inicial
+    When eu clico no link chamado Motoristas
+    And estou na pagina que lista motoristas
+    And eu vejo um motorista com nome "Arnaldo" ja existente
+    And eu clico no botao com o nome "Arnaldo" referente ao motorista
+    Then eu devo ver que o motorista com nome "Arnaldo" tem as informacoes corretas

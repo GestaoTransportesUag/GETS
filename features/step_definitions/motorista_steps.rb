@@ -59,3 +59,10 @@ Then("eu devo ver que o motorista agora tem o CPF {string}, nome {string}, numer
   expect(page).to have_content(numeroDeHoras)
   expect(page).to have_content(telefone)
 end
+
+Then("eu devo ver que o motorista com nome {string} tem as informacoes corretas") do |nome|
+  expect(page).to have_content(nome)
+  expect(page).to have_content('70526991410')
+  expect(page).to have_content('50')
+  expect(page).to have_content('99836613')
+end
