@@ -31,3 +31,11 @@ Feature: Usuario
     And eu preencho os campos CPF com "70526991418", nome com "Alan", senha "123456", email "alantop@gmail.com" e telefone "99836813"
     And eu clico no botao Update Usuario
     Then eu devo ver que o usuario agora tem o CPF "70526991418", nome "Alan", senha "123456", email "alantop@gmail.com" e telefone "99836813"
+
+  Scenario: visualizar as informacoes de um usuario
+    Given eu estou na pagina inicial
+    When eu clico no link chamado Usuarios
+    And estou na pagina que lista usuarios
+    And eu vejo um usuario com nome "Arnaldo" ja existente
+    And eu clico no botao com o nome "Arnaldo" referente ao usuario
+    Then eu devo ver que o usuario com nome "Arnaldo" tem as informacoes corretas

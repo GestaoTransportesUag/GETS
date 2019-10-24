@@ -63,3 +63,10 @@ Then("eu devo ver que o usuario agora tem o CPF {string}, nome {string}, senha {
   expect(page).to have_content(telefone)
 end
 
+Then("eu devo ver que o usuario com nome {string} tem as informacoes corretas") do |nome|
+  expect(page).to have_content(nome)
+  expect(page).to have_content('70526991410')
+  expect(page).to have_content('123456')
+  expect(page).to have_content('99836613')
+  expect(page).to have_content('arnaldovitorbarros@gmail.com')
+end
