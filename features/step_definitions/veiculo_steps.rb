@@ -82,3 +82,7 @@ Then("eu devo ver que o veiculo com a placa {string} tem as informacoes corretas
   expect(page).to have_content('azul')
   expect(page).to have_content('1000')
 end
+
+Then("eu vejo uma mensagem de erro indicando que o veiculo nao pode ser cadastrado") do
+  expect(page).to have_content('Placa is the wrong length')
+end

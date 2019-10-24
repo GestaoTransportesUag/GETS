@@ -39,3 +39,13 @@ Feature: Veiculo
     And eu vejo um veiculo com placa "RCA4567" ja existente
     And eu clico no botao com o nome da placa "RCA4567"
     Then eu devo ver que o veiculo com a placa "RCA4567" tem as informacoes corretas
+
+  Scenario: adicionar um veiculo com tamanho da placa menor que 7
+    Given eu estou na pagina inicial
+    When eu clico no link chamado Veiculos
+    And estou na pagina que lista veiculos
+    And eu clico em Novo Veiculo
+    And estou na pagina de adicionar um veiculo
+    And eu preencho os campos de placa com "A", modelo com "moto", ano com "1998", cor com "Rosa" e quilometragem com "3000"
+    And eu clico em Create Veiculo
+    Then eu vejo uma mensagem de erro indicando que o veiculo nao pode ser cadastrado
