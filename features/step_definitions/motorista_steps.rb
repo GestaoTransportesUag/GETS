@@ -66,3 +66,8 @@ Then("eu devo ver que o motorista com nome {string} tem as informacoes corretas"
   expect(page).to have_content('50')
   expect(page).to have_content('99836613')
 end
+
+Then("eu vejo uma mensagem de erro indicando que o motorista nao pode ser cadastrado") do
+  expect(page).to have_content('Cpf is the wrong length')
+end
+

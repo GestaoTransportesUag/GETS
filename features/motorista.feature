@@ -39,3 +39,13 @@ Feature: Motorista
     And eu vejo um motorista com nome "Arnaldo" ja existente
     And eu clico no botao com o nome "Arnaldo" referente ao motorista
     Then eu devo ver que o motorista com nome "Arnaldo" tem as informacoes corretas
+
+   Scenario: cadastrar um motorista com CPF menor que 11
+     Given eu estou na pagina inicial
+     When eu clico no link chamado Motoristas
+     And estou na pagina que lista motoristas
+     And eu clico em Novo Motorista
+     And estou na pagina de adicionar um motorista
+     And eu preencho os campos CPF com "7", nome com "Arnaldo", numero de horas com "0" e telefone "99836613"
+     And eu clico em Create Motorista
+     Then eu vejo uma mensagem de erro indicando que o motorista nao pode ser cadastrado
