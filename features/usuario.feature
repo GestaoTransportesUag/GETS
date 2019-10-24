@@ -39,3 +39,13 @@ Feature: Usuario
     And eu vejo um usuario com nome "Arnaldo" ja existente
     And eu clico no botao com o nome "Arnaldo" referente ao usuario
     Then eu devo ver que o usuario com nome "Arnaldo" tem as informacoes corretas
+
+  Scenario: cadastrar um usuario com CPF menor que 11
+    Given eu estou na pagina inicial
+    When eu clico no link chamado Usuarios
+    And estou na pagina que lista usuarios
+    And eu clico em Novo Usuario
+    And estou na pagina de adicionar um usuario
+    And eu preencho os campos CPF com "7", nome com "Arnaldo", senha "123456", email "arnaldovitorbarros@gmail.com" e telefone "99836613"
+    And eu clico em Create Usuario
+    Then eu vejo uma mensagem de erro indicando que o usuario nao pode ser cadastrado

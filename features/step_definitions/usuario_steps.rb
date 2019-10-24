@@ -70,3 +70,7 @@ Then("eu devo ver que o usuario com nome {string} tem as informacoes corretas") 
   expect(page).to have_content('99836613')
   expect(page).to have_content('arnaldovitorbarros@gmail.com')
 end
+
+Then("eu vejo uma mensagem de erro indicando que o usuario nao pode ser cadastrado") do
+  expect(page).to have_content('Cpf is the wrong length')
+end
