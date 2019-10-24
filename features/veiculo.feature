@@ -31,3 +31,11 @@ Feature: Veiculo
     And eu preencho os campos de placa com "CA69ABV", modelo com "Carreta", ano com "2002", cor com "Azul" e quilometragem com "30"
     And eu clico no botao Update Veiculo
     Then eu devo ver que o veiculo agora tem a placa "CA69ABV", modelo "Carreta", ano "2002", cor "Azul" e quilometragem "30"
+
+  Scenario: visualizar as informacoes de um veiculo
+    Given eu estou na pagina inicial
+    When eu clico no link chamado Veiculos
+    And estou na pagina que lista veiculos
+    And eu vejo um veiculo com placa "RCA4567" ja existente
+    And eu clico no botao com o nome da placa "RCA4567"
+    Then eu devo ver que o veiculo com a placa "RCA4567" tem as informacoes corretas

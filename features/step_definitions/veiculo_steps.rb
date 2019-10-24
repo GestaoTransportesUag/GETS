@@ -74,3 +74,11 @@ end
 When("eu clico no botao Editar") do
   click_link 'Editar'
 end
+
+Then("eu devo ver que o veiculo com a placa {string} tem as informacoes corretas") do |placa|
+  expect(page).to have_content(placa)
+  expect(page).to have_content('caminhonete')
+  expect(page).to have_content('1198')
+  expect(page).to have_content('azul')
+  expect(page).to have_content('1000')
+end
