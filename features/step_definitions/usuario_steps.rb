@@ -46,3 +46,20 @@ end
 Then("eu devo ver que o usuario com nome {string} foi removido corretamente") do |nome|
   expect(page).not_to have_selector(:link_or_button, nome)
 end
+
+When("eu clico no botao com o nome {string} referente ao usuario") do |nome|
+  click_link nome
+end
+
+When("eu clico no botao Update Usuario") do
+  click_button 'Update Usuario'
+end
+
+Then("eu devo ver que o usuario agora tem o CPF {string}, nome {string}, senha {string}, email {string} e telefone {string}") do |cpf, nome, senha, email, telefone|
+  expect(page).to have_content(cpf)
+  expect(page).to have_content(nome)
+  expect(page).to have_content(senha)
+  expect(page).to have_content(email)
+  expect(page).to have_content(telefone)
+end
+
