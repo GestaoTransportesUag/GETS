@@ -1,11 +1,12 @@
 language: ruby
 
 rvm:
-  - 2.5.3.
+  - ruby-head
+
+before_install:
+  - gem install bundler:2.0.2
 
 script:
-  - bundle install
-  - bundle update
   - bundle exec rake db:create:all
   - bundle exec rake dv:migrate RAILS_ENV=test
   - ruby -Itest test/models_motorista_test.rb
