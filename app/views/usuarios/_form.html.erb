@@ -1,7 +1,7 @@
 <%= form_with(model: usuario, local: true) do |form| %>
   <% if usuario.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(usuario.errors.count, "error") %> prohibited this usuario from being saved:</h2>
+      <h2><%= pluralize(usuario.errors.count, "erros") %> proíbem esse usuário de ser salvo:</h2>
 
       <ul>
       <% usuario.errors.full_messages.each do |message| %>
@@ -12,32 +12,32 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :cpf %>
+    <%= form.label :CPF %>
     <%= form.text_field :cpf, id: :usuario_cpf %>
   </div>
 
   <div class="field">
-    <%= form.label :nome %>
+    <%= form.label :Nome %>
     <%= form.text_field :nome, id: :usuario_nome %>
   </div>
 
   <div class="field">
-    <%= form.label :senha %>
+    <%= form.label :Senha %>
     <%= form.text_field :senha, id: :usuario_senha %>
   </div>
 
   <div class="field">
-    <%= form.label :email %>
+    <%= form.label :Email %>
     <%= form.text_field :email, id: :usuario_email %>
   </div>
 
   <div class="field">
-    <%= form.label :telefone %>
+    <%= form.label :Telefone %>
     <%= form.text_field :telefone, id: :usuario_telefone %>
   </div>
 
   <div class="field">
-    <%= form.label :capacidadeDeGerencia %>
+    <%= form.label :Capacidade_de_Gerência %>
     <%= form.check_box :capacidadeDeGerencia, id: :usuario_capacidadeDeGerencia %>
   </div>
 

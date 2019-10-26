@@ -30,7 +30,7 @@ class MotoristaController < ApplicationController
 
     respond_to do |format|
       if @motorista.save
-        format.html { redirect_to @motorista, notice: 'Motorista was successfully created.' }
+        format.html { redirect_to @motorista, notice: 'Motorista foi cadastrado com sucesso.' }
         format.json { render :show, status: :created, location: @motorista }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class MotoristaController < ApplicationController
   def update
     respond_to do |format|
       if @motorista.update(motorista_params)
-        format.html { redirect_to @motorista, notice: 'Motorista was successfully updated.' }
+        format.html { redirect_to @motorista, notice: 'As informações do motorista foram atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @motorista }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class MotoristaController < ApplicationController
   def destroy
     @motorista.destroy
     respond_to do |format|
-      format.html { redirect_to motorista_index_url, notice: 'Motorista was successfully destroyed.' }
+      format.html { redirect_to motorista_index_url, notice: 'O cadastro do motorista foi removido com sucesso' }
       format.json { head :no_content }
     end
   end
