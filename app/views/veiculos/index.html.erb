@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Veiculos
+<div class = "title-container">
+  <h1>Veículos</h1>
+</div>
   <ul>
     <%= form_tag veiculos_path, :method => 'get' do %>
       <%= text_field_tag :search, params[:search] %>

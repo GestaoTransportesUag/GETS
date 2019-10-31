@@ -1,7 +1,7 @@
 <%= form_with(model: veiculo, local: true) do |form| %>
   <% if veiculo.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(veiculo.errors.count, "error") %> prohibited this veiculo from being saved:</h2>
+      <h2><%= pluralize(veiculo.errors.count, "erros") %> proíbem este veículo de ser salvo:</h2>
 
       <ul>
       <% veiculo.errors.full_messages.each do |message| %>
@@ -12,37 +12,37 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :placa %>
+    <%= form.label :Placa %>
     <%= form.text_field :placa, id: :veiculo_placa %>
   </div>
 
   <div class="field">
-    <%= form.label :modelo %>
+    <%= form.label :Modelo %>
     <%= form.text_field :modelo, id: :veiculo_modelo %>
   </div>
 
   <div class="field">
-    <%= form.label :ano %>
+    <%= form.label :Ano %>
     <%= form.text_field :ano, id: :veiculo_ano %>
   </div>
 
   <div class="field">
-    <%= form.label :cor %>
+    <%= form.label :Cor %>
     <%= form.text_field :cor, id: :veiculo_cor %>
   </div>
 
   <div class="field">
-    <%= form.label :quilometragem %>
+    <%= form.label :Quilometragem %>
     <%= form.text_field :quilometragem, id: :veiculo_quilometragem %>
   </div>
 
   <div class="field">
-    <%= form.label :manutencaoEmDia %>
+    <%= form.label :Manutenção_em_Dia %>
     <%= form.check_box :manutencaoEmDia, id: :veiculo_manutencaoEmDia %>
   </div>
 
   <div class="field">
-    <%= form.label :alocado %>
+    <%= form.label :Alocado %>
     <%= form.check_box :alocado, id: :veiculo_alocado %>
   </div>
 

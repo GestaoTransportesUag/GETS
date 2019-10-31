@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Usuario:</strong>
+  <strong>Usuário:</strong>
   <%= @viagem.usuario.nome %>
 </p>
 
 <p>
-  <strong>Veiculo:</strong>
+  <strong>Veículo:</strong>
   <%= @viagem.veiculo.placa %>
 </p>
 
@@ -16,13 +16,8 @@
 </p>
 
 <p>
-  <strong>Distanciapercorrida:</strong>
+  <strong>Distância Percorrida:</strong>
   <%= @viagem.distanciaPercorrida %>
-</p>
-
-<p>
-  <strong>Nomerequisor:</strong>
-  <%= @viagem.nomeRequisor %>
 </p>
 
 <p>
@@ -31,32 +26,37 @@
 </p>
 
 <p>
-  <strong>Funcaorequisitor:</strong>
+  <strong>Nome do Requisor:</strong>
+  <%= @viagem.nomeRequisor %>
+</p>
+
+<p>
+  <strong>Função do Requisitor:</strong>
   <%= @viagem.funcaoRequisitor %>
 </p>
 
 <p>
-  <strong>Cpfrequisitor:</strong>
+  <strong>Cpf do Requisitor:</strong>
   <%= @viagem.cpfRequisitor %>
 </p>
 
 <p>
-  <strong>Descricaoimprevistos:</strong>
+  <strong>Descrição de Imprevistos:</strong>
   <%= @viagem.descricaoImprevistos %>
 </p>
 
 <p>
-  <strong>Numacompanhantes:</strong>
+  <strong>Número de Acompanhantes:</strong>
   <%= @viagem.numAcompanhantes %>
 </p>
 
 <p>
-  <strong>Datapartida:</strong>
+  <strong>Data de Partida:</strong>
   <%= @viagem.dataPartida %>
 </p>
 
 <p>
-  <strong>Datachegada:</strong>
+  <strong>Data de Chegada:</strong>
   <%= @viagem.dataChegada %>
 </p>
 
@@ -66,14 +66,14 @@
 </p>
 
 <p>
-  <strong>Horasaida:</strong>
+  <strong>Horário de Saída:</strong>
   <%= @viagem.horaSaida %>
 </p>
 
 <p>
-  <strong>Horachegada:</strong>
+  <strong>Horário de Chegada:</strong>
   <%= @viagem.horaChegada %>
 </p>
 
-<%= link_to 'Edit', edit_viagem_path(@viagem) %> |
-<%= link_to 'Back', viagems_path %>
+<%= link_to 'Editar', edit_viagem_path(@viagem), class:"btn btn-default" %> |
+<%= link_to 'Voltar', viagems_path, class:"btn btn-default" %>
