@@ -4,12 +4,13 @@ class ViagemsController < ApplicationController
   # GET /viagems
   # GET /viagems.json
   def index
-    @viagems = Viagem.all
+    @viagems = Viagem.search(params[:search])
   end
 
   # GET /viagems/1
   # GET /viagems/1.json
   def show
+    @viagem = Viagem.find(params[:id])
   end
 
   # GET /viagems/new
@@ -19,6 +20,7 @@ class ViagemsController < ApplicationController
 
   # GET /viagems/1/edit
   def edit
+    @viagem = Viagem.find(params[:id])
   end
 
   # POST /viagems
@@ -28,7 +30,7 @@ class ViagemsController < ApplicationController
 
     respond_to do |format|
       if @viagem.save
-        format.html { redirect_to @viagem, notice: 'Viagem was successfully created.' }
+        format.html { redirect_to @viagem, notice: 'Viagem foi agendada com sucesso' }
         format.json { render :show, status: :created, location: @viagem }
       else
         format.html { render :new }
@@ -42,7 +44,7 @@ class ViagemsController < ApplicationController
   def update
     respond_to do |format|
       if @viagem.update(viagem_params)
-        format.html { redirect_to @viagem, notice: 'Viagem was successfully updated.' }
+        format.html { redirect_to @viagem, notice: 'As informações da viagem foram atualizadas com sucesso' }
         format.json { render :show, status: :ok, location: @viagem }
       else
         format.html { render :edit }
@@ -56,7 +58,7 @@ class ViagemsController < ApplicationController
   def destroy
     @viagem.destroy
     respond_to do |format|
-      format.html { redirect_to viagems_url, notice: 'Viagem was successfully destroyed.' }
+      format.html { redirect_to viagems_url, notice: 'Viagem foi desagendada com sucesso' }
       format.json { head :no_content }
     end
   end

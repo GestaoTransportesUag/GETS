@@ -1,55 +1,26 @@
 <p id="notice"><%= notice %></p>
+<div class = "title-container">
+  <h1>Viagens</h1>
+</div>
 
-<h1>Viagems</h1>
+</div>
+<ul>
+  <%= form_tag viagems_path, :method => 'get' do %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Buscando", :value => "Buscar" %>
+  <% end %>
+</ul>
 
-<table>
-  <thead>
-    <tr>
-      <th>Usuario</th>
-      <th>Veiculo</th>
-      <th>Motorista</th>
-      <th>Distanciapercorrida</th>
-      <th>Nomerequisor</th>
-      <th>Finalidade</th>
-      <th>Funcaorequisitor</th>
-      <th>Cpfrequisitor</th>
-      <th>Descricaoimprevistos</th>
-      <th>Numacompanhantes</th>
-      <th>Datapartida</th>
-      <th>Datachegada</th>
-      <th>Destino</th>
-      <th>Horasaida</th>
-      <th>Horachegada</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @viagems.each do |viagem| %>
-      <tr>
-        <td><%= viagem.usuario.nome %></td>
-        <td><%= viagem.veiculo.placa %></td>
-        <td><%= viagem.motorista.nome %></td>
-        <td><%= viagem.distanciaPercorrida %></td>
-        <td><%= viagem.nomeRequisor %></td>
-        <td><%= viagem.finalidade %></td>
-        <td><%= viagem.funcaoRequisitor %></td>
-        <td><%= viagem.cpfRequisitor %></td>
-        <td><%= viagem.descricaoImprevistos %></td>
-        <td><%= viagem.numAcompanhantes %></td>
-        <td><%= viagem.dataPartida %></td>
-        <td><%= viagem.dataChegada %></td>
-        <td><%= viagem.destino %></td>
-        <td><%= viagem.horaSaida %></td>
-        <td><%= viagem.horaChegada %></td>
-        <td><%= link_to 'Show', viagem %></td>
-        <td><%= link_to 'Edit', edit_viagem_path(viagem) %></td>
-        <td><%= link_to 'Destroy', viagem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @viagems.each do |viagem| %>
+  <ul>
+    <li>
+      <%= link_to viagem.destino, viagem_path(viagem), class: "btn btn-default" %>
+      <%= link_to "Desagendar", viagem, data: {:confirm => "Deseja desagendar a viagem?"}, :method => :delete, class: "btn btn-default" %>
+    </li>
+  </ul>
+<% end %>
+<br>
 
 <br>
 
-<%= link_to 'New Viagem', new_viagem_path %>
+<%= link_to 'Agendar Viagem', new_viagem_path, class: "btn btn-default" %>
