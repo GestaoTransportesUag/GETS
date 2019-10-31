@@ -27,9 +27,9 @@
   <tbody>
     <% @viagems.each do |viagem| %>
       <tr>
-        <td><%= viagem.usuario %></td>
-        <td><%= viagem.veiculo %></td>
-        <td><%= viagem.motorista %></td>
+        <td><%= viagem.usuario.nome %></td>
+        <td><%= viagem.veiculo.placa %></td>
+        <td><%= viagem.motorista.nome %></td>
         <td><%= viagem.distanciaPercorrida %></td>
         <td><%= viagem.nomeRequisor %></td>
         <td><%= viagem.finalidade %></td>
