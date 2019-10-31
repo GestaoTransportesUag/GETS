@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191021195538) do
+ActiveRecord::Schema.define(version: 20191031132532) do
 
   create_table "motorista", force: :cascade do |t|
     t.bigint "cpf"
@@ -43,6 +43,29 @@ ActiveRecord::Schema.define(version: 20191021195538) do
     t.boolean "alocado"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "viagems", force: :cascade do |t|
+    t.integer "usuario_id"
+    t.integer "veiculo_id"
+    t.integer "motorista_id"
+    t.bigint "distanciaPercorrida"
+    t.string "nomeRequisor"
+    t.text "finalidade"
+    t.string "funcaoRequisitor"
+    t.bigint "cpfRequisitor"
+    t.text "descricaoImprevistos"
+    t.integer "numAcompanhantes"
+    t.bigint "dataPartida"
+    t.bigint "dataChegada"
+    t.string "destino"
+    t.bigint "horaSaida"
+    t.bigint "horaChegada"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["motorista_id"], name: "index_viagems_on_motorista_id"
+    t.index ["usuario_id"], name: "index_viagems_on_usuario_id"
+    t.index ["veiculo_id"], name: "index_viagems_on_veiculo_id"
   end
 
 end

@@ -13,17 +13,17 @@
 
   <div class="field">
     <%= form.label :usuario_id %>
-    <%= form.text_field :usuario_id, id: :viagem_usuario_id %>
+    <%= form.collection_select(:usuario_id, Usuario.all, :id, :nome, prompt: true)%>
   </div>
 
   <div class="field">
     <%= form.label :veiculo_id %>
-    <%= form.text_field :veiculo_id, id: :viagem_veiculo_id %>
+    <%= form.collection_select(:veiculo_id, Veiculo.all, :id, :placa, prompt: true)%>
   </div>
 
   <div class="field">
     <%= form.label :motorista_id %>
-    <%= form.text_field :motorista_id, id: :viagem_motorista_id %>
+    <%= form.collection_select(:motorista_id, Motorista.all, :id, :nome, prompt: true)%>
   </div>
 
   <div class="field">
