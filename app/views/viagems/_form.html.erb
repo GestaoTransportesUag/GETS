@@ -1,7 +1,7 @@
 <%= form_with(model: viagem, local: true) do |form| %>
   <% if viagem.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(viagem.errors.count, "error") %> prohibited this viagem from being saved:</h2>
+      <h2><%= pluralize(viagem.errors.count, "erros") %> proíbem essa viagem de ser agendada:</h2>
 
       <ul>
       <% viagem.errors.full_messages.each do |message| %>
@@ -27,13 +27,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :distanciaPercorrida %>
+    <%= form.label :distância_Percorrida %>
     <%= form.text_field :distanciaPercorrida, id: :viagem_distanciaPercorrida %>
-  </div>
-
-  <div class="field">
-    <%= form.label :nomeRequisor %>
-    <%= form.text_field :nomeRequisor, id: :viagem_nomeRequisor %>
   </div>
 
   <div class="field">
@@ -42,32 +37,37 @@
   </div>
 
   <div class="field">
-    <%= form.label :funcaoRequisitor %>
+    <%= form.label :nome_do_Requisor %>
+    <%= form.text_field :nomeRequisor, id: :viagem_nomeRequisor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :funcao_do_Requisitor %>
     <%= form.text_field :funcaoRequisitor, id: :viagem_funcaoRequisitor %>
   </div>
 
   <div class="field">
-    <%= form.label :cpfRequisitor %>
+    <%= form.label :cpf_do_Requisitor %>
     <%= form.text_field :cpfRequisitor, id: :viagem_cpfRequisitor %>
   </div>
 
   <div class="field">
-    <%= form.label :descricaoImprevistos %>
+    <%= form.label :descrição_de_Imprevistos %>
     <%= form.text_area :descricaoImprevistos, id: :viagem_descricaoImprevistos %>
   </div>
 
   <div class="field">
-    <%= form.label :numAcompanhantes %>
+    <%= form.label :número_de_Acompanhantes %>
     <%= form.number_field :numAcompanhantes, id: :viagem_numAcompanhantes %>
   </div>
 
   <div class="field">
-    <%= form.label :dataPartida %>
+    <%= form.label :data_de_Partida %>
     <%= form.text_field :dataPartida, id: :viagem_dataPartida %>
   </div>
 
   <div class="field">
-    <%= form.label :dataChegada %>
+    <%= form.label :data_de_Chegada %>
     <%= form.text_field :dataChegada, id: :viagem_dataChegada %>
   </div>
 
@@ -77,12 +77,12 @@
   </div>
 
   <div class="field">
-    <%= form.label :horaSaida %>
+    <%= form.label :horário_de_Saída %>
     <%= form.text_field :horaSaida, id: :viagem_horaSaida %>
   </div>
 
   <div class="field">
-    <%= form.label :horaChegada %>
+    <%= form.label :horário_de_Chegada %>
     <%= form.text_field :horaChegada, id: :viagem_horaChegada %>
   </div>
 

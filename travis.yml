@@ -1,7 +1,10 @@
 language: ruby
 
 rvm:
-  - 2.3.3.
+  - ruby-head
+
+before_install:
+  - gem install bundler:2.0.2
 
 script:
   - bundle exec rake db:create:all
