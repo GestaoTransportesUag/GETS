@@ -1,0 +1,92 @@
+<%= form_with(model: viagem, local: true) do |form| %>
+  <% if viagem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(viagem.errors.count, "error") %> prohibited this viagem from being saved:</h2>
+
+      <ul>
+      <% viagem.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :usuario_id %>
+    <%= form.collection_select(:usuario_id, Usuario.all, :id, :nome, prompt: true)%>
+  </div>
+
+  <div class="field">
+    <%= form.label :veiculo_id %>
+    <%= form.collection_select(:veiculo_id, Veiculo.all, :id, :placa, prompt: true)%>
+  </div>
+
+  <div class="field">
+    <%= form.label :motorista_id %>
+    <%= form.collection_select(:motorista_id, Motorista.all, :id, :nome, prompt: true)%>
+  </div>
+
+  <div class="field">
+    <%= form.label :distanciaPercorrida %>
+    <%= form.text_field :distanciaPercorrida, id: :viagem_distanciaPercorrida %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nomeRequisor %>
+    <%= form.text_field :nomeRequisor, id: :viagem_nomeRequisor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :finalidade %>
+    <%= form.text_area :finalidade, id: :viagem_finalidade %>
+  </div>
+
+  <div class="field">
+    <%= form.label :funcaoRequisitor %>
+    <%= form.text_field :funcaoRequisitor, id: :viagem_funcaoRequisitor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cpfRequisitor %>
+    <%= form.text_field :cpfRequisitor, id: :viagem_cpfRequisitor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descricaoImprevistos %>
+    <%= form.text_area :descricaoImprevistos, id: :viagem_descricaoImprevistos %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numAcompanhantes %>
+    <%= form.number_field :numAcompanhantes, id: :viagem_numAcompanhantes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dataPartida %>
+    <%= form.text_field :dataPartida, id: :viagem_dataPartida %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dataChegada %>
+    <%= form.text_field :dataChegada, id: :viagem_dataChegada %>
+  </div>
+
+  <div class="field">
+    <%= form.label :destino %>
+    <%= form.text_field :destino, id: :viagem_destino %>
+  </div>
+
+  <div class="field">
+    <%= form.label :horaSaida %>
+    <%= form.text_field :horaSaida, id: :viagem_horaSaida %>
+  </div>
+
+  <div class="field">
+    <%= form.label :horaChegada %>
+    <%= form.text_field :horaChegada, id: :viagem_horaChegada %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

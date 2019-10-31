@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :viagems
   get 'sessions/new'
 
   get 'welcome/index'

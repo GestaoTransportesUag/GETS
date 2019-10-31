@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @viagem.usuario.nome %>
+</p>
+
+<p>
+  <strong>Veiculo:</strong>
+  <%= @viagem.veiculo.placa %>
+</p>
+
+<p>
+  <strong>Motorista:</strong>
+  <%= @viagem.motorista.nome %>
+</p>
+
+<p>
+  <strong>Distanciapercorrida:</strong>
+  <%= @viagem.distanciaPercorrida %>
+</p>
+
+<p>
+  <strong>Nomerequisor:</strong>
+  <%= @viagem.nomeRequisor %>
+</p>
+
+<p>
+  <strong>Finalidade:</strong>
+  <%= @viagem.finalidade %>
+</p>
+
+<p>
+  <strong>Funcaorequisitor:</strong>
+  <%= @viagem.funcaoRequisitor %>
+</p>
+
+<p>
+  <strong>Cpfrequisitor:</strong>
+  <%= @viagem.cpfRequisitor %>
+</p>
+
+<p>
+  <strong>Descricaoimprevistos:</strong>
+  <%= @viagem.descricaoImprevistos %>
+</p>
+
+<p>
+  <strong>Numacompanhantes:</strong>
+  <%= @viagem.numAcompanhantes %>
+</p>
+
+<p>
+  <strong>Datapartida:</strong>
+  <%= @viagem.dataPartida %>
+</p>
+
+<p>
+  <strong>Datachegada:</strong>
+  <%= @viagem.dataChegada %>
+</p>
+
+<p>
+  <strong>Destino:</strong>
+  <%= @viagem.destino %>
+</p>
+
+<p>
+  <strong>Horasaida:</strong>
+  <%= @viagem.horaSaida %>
+</p>
+
+<p>
+  <strong>Horachegada:</strong>
+  <%= @viagem.horaChegada %>
+</p>
+
+<%= link_to 'Edit', edit_viagem_path(@viagem) %> |
+<%= link_to 'Back', viagems_path %>
