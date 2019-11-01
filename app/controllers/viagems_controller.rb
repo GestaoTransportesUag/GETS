@@ -32,6 +32,9 @@ class ViagemsController < ApplicationController
       if @viagem.save
         format.html { redirect_to @viagem, notice: 'Viagem foi agendada com sucesso' }
         format.json { render :show, status: :created, location: @viagem }
+        @veiculo = @viagem.veiculo
+        @veiculo.setAlocado(true)
+        @veiculo.save
       else
         format.html { render :new }
         format.json { render json: @viagem.errors, status: :unprocessable_entity }
@@ -71,6 +74,6 @@ class ViagemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def viagem_params
-      params.require(:viagem).permit(:usuario_id, :veiculo_id, :motorista_id, :distanciaPercorrida, :nomeRequisor, :finalidade, :funcaoRequisitor, :cpfRequisitor, :descricaoImprevistos, :numAcompanhantes, :dataPartida, :dataChegada, :destino, :horaSaida, :horaChegada)
+      params.require(:viagem).permit(:usuario_id, :veiculo_id, :motorista_id, :distanciaPercorrida, :nomeRequisor, :finalidade, :funcaoRequisitor, :cpfRequisitor, :descricaoImprevistos, :numAcompanhantes, :dataPartida, :dataChegada, :destino, :horaSaida, :horaChegada, :realizada)
     end
 end
