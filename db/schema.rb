@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191031132532) do
+ActiveRecord::Schema.define(version: 20191101124242) do
 
   create_table "motorista", force: :cascade do |t|
     t.bigint "cpf"
     t.string "nome"
-    t.integer "numeroDeHoras"
+    t.bigint "diasDeFolga"
     t.boolean "bancoDeHoras"
     t.bigint "telefone"
     t.datetime "created_at", null: false

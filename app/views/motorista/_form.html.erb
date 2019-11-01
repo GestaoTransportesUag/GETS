@@ -1,7 +1,7 @@
 <%= form_with(model: motorista, local: true) do |form| %>
   <% if motorista.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(motorista.errors.count, "erros") %> proíbem esse motorista de ser salvo:</h2>
+      <h2><%= pluralize(motorista.errors.count, "erros") %> proíbem o motorista de ser salvo:</h2>
 
       <ul>
       <% motorista.errors.full_messages.each do |message| %>
@@ -12,27 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :CPF %>
+    <%= form.label :cpf %>
     <%= form.text_field :cpf, id: :motorista_cpf %>
   </div>
 
   <div class="field">
-    <%= form.label :Nome %>
+    <%= form.label :nome %>
     <%= form.text_field :nome, id: :motorista_nome %>
   </div>
 
   <div class="field">
-    <%= form.label :Numero_de_Horas %>
-    <%= form.number_field :numeroDeHoras, id: :motorista_numeroDeHoras %>
+    <%= form.label :dias_de_Folga %>
+    <%= form.text_field :diasDeFolga, id: :motorista_diasDeFolga %>
   </div>
 
   <div class="field">
-    <%= form.label :Banco_de_Horas %>
+    <%= form.label :banco_de_Horas %>
     <%= form.check_box :bancoDeHoras, id: :motorista_bancoDeHoras %>
   </div>
 
   <div class="field">
-    <%= form.label :Telefone %>
+    <%= form.label :telefone %>
     <%= form.text_field :telefone, id: :motorista_telefone %>
   </div>
 
