@@ -18,8 +18,8 @@
   <tbody>
     <% @manutencaos.each do |manutencao| %>
       <tr>
-        <td><%= manutencao.usuario %></td>
-        <td><%= manutencao.veiculo %></td>
+        <td><%= manutencao.usuario.nome %></td>
+        <td><%= manutencao.veiculo.nome %></td>
         <td><%= manutencao.descricao %></td>
         <td><%= manutencao.custo %></td>
         <td><%= manutencao.realizadoEm %></td>
