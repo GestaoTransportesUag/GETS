@@ -66,6 +66,13 @@ class ViagemsController < ApplicationController
     end
   end
 
+  public
+  def confirmarRealizacao
+    @veiculo = @viagem.veiculo
+    @veiculo.setAlocado(false)
+    @veiculo.save
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_viagem
@@ -74,6 +81,6 @@ class ViagemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def viagem_params
-      params.require(:viagem).permit(:usuario_id, :veiculo_id, :motorista_id, :distanciaPercorrida, :nomeRequisor, :finalidade, :funcaoRequisitor, :cpfRequisitor, :descricaoImprevistos, :numAcompanhantes, :dataPartida, :dataChegada, :destino, :horaSaida, :horaChegada, :realizada)
+      params.require(:viagem).permit(:usuario_id, :veiculo_id, :motorista_id, :distanciaPercorrida, :nomeRequisor, :finalidade, :funcaoRequisitor, :cpfRequisitor, :descricaoImprevistos, :numAcompanhantes, :dataPartida, :dataChegada, :destino, :horaSaida, :horaChegada)
     end
 end
