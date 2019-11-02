@@ -4,12 +4,13 @@ class ManutencaosController < ApplicationController
   # GET /manutencaos
   # GET /manutencaos.json
   def index
-    @manutencaos = Manutencao.all
+    @manutencaos = Manutencao.search(params[:search])
   end
 
   # GET /manutencaos/1
   # GET /manutencaos/1.json
   def show
+    @manutencaos = Manutencao.find(params[:id])
   end
 
   # GET /manutencaos/new
@@ -19,6 +20,7 @@ class ManutencaosController < ApplicationController
 
   # GET /manutencaos/1/edit
   def edit
+    @manutencaos = Manutencao.find(params[:id])
   end
 
   # POST /manutencaos
@@ -28,7 +30,7 @@ class ManutencaosController < ApplicationController
 
     respond_to do |format|
       if @manutencao.save
-        format.html { redirect_to @manutencao, notice: 'Manutencao was successfully created.' }
+        format.html { redirect_to @manutencao, notice: 'Manutenção foi registrada com sucesso' }
         format.json { render :show, status: :created, location: @manutencao }
       else
         format.html { render :new }
@@ -42,7 +44,7 @@ class ManutencaosController < ApplicationController
   def update
     respond_to do |format|
       if @manutencao.update(manutencao_params)
-        format.html { redirect_to @manutencao, notice: 'Manutencao was successfully updated.' }
+        format.html { redirect_to @manutencao, notice: 'As informações da manutenção foram atualizadas com sucesso' }
         format.json { render :show, status: :ok, location: @manutencao }
       else
         format.html { render :edit }
@@ -56,7 +58,7 @@ class ManutencaosController < ApplicationController
   def destroy
     @manutencao.destroy
     respond_to do |format|
-      format.html { redirect_to manutencaos_url, notice: 'Manutencao was successfully destroyed.' }
+      format.html { redirect_to manutencaos_url, notice: 'A manutenção foi removida dos registros com sucesso' }
       format.json { head :no_content }
     end
   end

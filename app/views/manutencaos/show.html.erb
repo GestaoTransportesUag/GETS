@@ -6,12 +6,12 @@
 </p>
 
 <p>
-  <strong>Veiculo:</strong>
+  <strong>Veículo:</strong>
   <%= @manutencao.veiculo.placa %>
 </p>
 
 <p>
-  <strong>Descricao:</strong>
+  <strong>Descrição:</strong>
   <%= @manutencao.descricao %>
 </p>
 
@@ -21,14 +21,14 @@
 </p>
 
 <p>
-  <strong>Realizadoem:</strong>
+  <strong>Realizado em:</strong>
   <%= @manutencao.realizadoEm %>
 </p>
 
 <p>
-  <strong>Realizadoquando:</strong>
+  <strong>Realizado quando:</strong>
   <%= @manutencao.realizadoQuando %>
 </p>
 
-<%= link_to 'Edit', edit_manutencao_path(@manutencao) %> |
-<%= link_to 'Back', manutencaos_path %>
+<%= link_to 'Editar', edit_manutencao_path(@manutencao), class:"btn btn-default" %> |
+<%= link_to 'Voltar', manutencaos_path, class:"btn btn-default"  %>

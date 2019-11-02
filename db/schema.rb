@@ -12,6 +12,19 @@
 
 ActiveRecord::Schema.define(version: 20191101124242) do
 
+  create_table "manutencaos", force: :cascade do |t|
+    t.integer "usuario_id"
+    t.integer "veiculo_id"
+    t.text "descricao"
+    t.float "custo"
+    t.bigint "realizadoEm"
+    t.bigint "realizadoQuando"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["usuario_id"], name: "index_manutencaos_on_usuario_id"
+    t.index ["veiculo_id"], name: "index_manutencaos_on_veiculo_id"
+  end
+
   create_table "motorista", force: :cascade do |t|
     t.bigint "cpf"
     t.string "nome"
