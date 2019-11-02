@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  usuario: one
+  veiculo: one
+  descricao: MyText
+  custo: 1.5
+  realizadoEm: 
+  realizadoQuando: 
+
+two:
+  usuario: two
+  veiculo: two
+  descricao: MyText
+  custo: 1.5
+  realizadoEm: 
+  realizadoQuando: 

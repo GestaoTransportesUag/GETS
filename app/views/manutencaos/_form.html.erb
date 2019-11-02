@@ -1,0 +1,47 @@
+<%= form_with(model: manutencao, local: true) do |form| %>
+  <% if manutencao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(manutencao.errors.count, "error") %> prohibited this manutencao from being saved:</h2>
+
+      <ul>
+      <% manutencao.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :usuario_id %>
+    <%= form.collection_select(:usuario_id, Usuario.all, :id, :nome, prompt: true)%>
+  </div>
+
+  <div class="field">
+    <%= form.label :veiculo_id %>
+    <%= form.collection_select(:veiculo_id, Veiculo.all, :id, :placa, prompt: true)%>
+  </div>
+
+  <div class="field">
+    <%= form.label :descricao %>
+    <%= form.text_area :descricao, id: :manutencao_descricao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :custo %>
+    <%= form.text_field :custo, id: :manutencao_custo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :realizadoEm %>
+    <%= form.text_field :realizadoEm, id: :manutencao_realizadoEm %>
+  </div>
+
+  <div class="field">
+    <%= form.label :realizadoQuando %>
+    <%= form.text_field :realizadoQuando, id: :manutencao_realizadoQuando %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
