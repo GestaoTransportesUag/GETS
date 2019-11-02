@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @manutencao.usuario.nome %>
+</p>
+
+<p>
+  <strong>Veiculo:</strong>
+  <%= @manutencao.veiculo.placa %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @manutencao.descricao %>
+</p>
+
+<p>
+  <strong>Custo:</strong>
+  <%= @manutencao.custo %>
+</p>
+
+<p>
+  <strong>Realizadoem:</strong>
+  <%= @manutencao.realizadoEm %>
+</p>
+
+<p>
+  <strong>Realizadoquando:</strong>
+  <%= @manutencao.realizadoQuando %>
+</p>
+
+<%= link_to 'Edit', edit_manutencao_path(@manutencao) %> |
+<%= link_to 'Back', manutencaos_path %>
