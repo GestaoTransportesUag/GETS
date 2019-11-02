@@ -30,7 +30,7 @@ class MotoristaController < ApplicationController
 
     respond_to do |format|
       if @motorista.save
-        format.html { redirect_to @motorista, notice: 'Motorista foi cadastrado com sucesso.' }
+        format.html { redirect_to @motorista, notice: 'Motorista cadastrado com sucesso.' }
         format.json { render :show, status: :created, location: @motorista }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class MotoristaController < ApplicationController
   def update
     respond_to do |format|
       if @motorista.update(motorista_params)
-        format.html { redirect_to @motorista, notice: 'As informações do motorista foram atualizado com sucesso.' }
+        format.html { redirect_to @motorista, notice: 'As informações do motorista foram atualiadas com sucesso' }
         format.json { render :show, status: :ok, location: @motorista }
       else
         format.html { render :edit }
@@ -63,46 +63,6 @@ class MotoristaController < ApplicationController
     end
   end
 
-  def getCPF
-    return @motorista.cpf
-  end
-
-  def setCPF(novocpf)
-    @motorista.cpf = novocpf
-  end
-
-  def getNome
-    return @motorista.nome
-  end
-
-  def setNome(novonome)
-    @motorista.nome = novonome
-  end
-
-  def getTelefone
-    return @motorista.telefone
-  end
-
-  def setTelefone(novotelefone)
-    @motorista.telefone = novotelefone
-  end
-
-  def getNumeroDeHoras
-    return @motorista.numeroDeHoras
-  end
-
-  def setNumeroDeHoras(novoNumeroDeHoras)
-    @motorista.numeroDeHoras = novoNumeroDeHoras
-  end
-
-  def getBancoDeHoras
-    return @motorista.bancoDeHoras
-  end
-
-  def setBancoDeHoras(novoBancoDeHoras)
-    @motorista.bancoDeHoras = novoBancoDeHoras
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_motorista
@@ -111,6 +71,6 @@ class MotoristaController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def motorista_params
-      params.require(:motorista).permit(:cpf, :nome, :numeroDeHoras, :bancoDeHoras, :telefone)
+      params.require(:motorista).permit(:cpf, :nome, :diasDeFolga, :bancoDeHoras, :telefone)
     end
 end

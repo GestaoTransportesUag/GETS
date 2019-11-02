@@ -17,7 +17,7 @@ class MotoristaControllerTest < ActionDispatch::IntegrationTest
 
   test "should create motorista" do
     assert_difference('Motorista.count') do
-      post motorista_index_url, params: { motorista: { bancoDeHoras: @motorista.bancoDeHoras, cpf: @motorista.cpf, nome: @motorista.nome, numeroDeHoras: @motorista.numeroDeHoras, telefone: @motorista.telefone } }
+      post motorista_index_url, params: { motorista: { bancoDeHoras: @motorista.bancoDeHoras, cpf: @motorista.cpf, diasDeFolga: @motorista.diasDeFolga, nome: @motorista.nome, telefone: @motorista.telefone } }
     end
 
     assert_redirected_to motorista_url(Motorista.last)
@@ -34,7 +34,7 @@ class MotoristaControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update motorista" do
-    patch motorista_url(@motorista), params: { motorista: { bancoDeHoras: @motorista.bancoDeHoras, cpf: @motorista.cpf, nome: @motorista.nome, numeroDeHoras: @motorista.numeroDeHoras, telefone: @motorista.telefone } }
+    patch motorista_url(@motorista), params: { motorista: { bancoDeHoras: @motorista.bancoDeHoras, cpf: @motorista.cpf, diasDeFolga: @motorista.diasDeFolga, nome: @motorista.nome, telefone: @motorista.telefone } }
     assert_redirected_to motorista_url(@motorista)
   end
 

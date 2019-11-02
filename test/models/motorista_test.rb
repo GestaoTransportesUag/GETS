@@ -10,12 +10,12 @@ class MotoristaTest < ActiveSupport::TestCase
   end
 
   test 'Nao deve salvar um motorista sem nome' do
-    motorista = Motorista.new cpf:11111111111, numeroDeHoras: 0, bancoDeHoras: false, telefone: 981380507
+    motorista = Motorista.new cpf:11111111111, diasDeFolga: 0, bancoDeHoras: false, telefone: 981380507
     assert_not motorista.save
   end
 
   test 'Nao deve salvar um motorista com cpf menor que 11 digitos' do
-    motorista = Motorista.new cpf: 1111111111,nome: "Jose", numeroDeHoras: 0, bancoDeHoras: false, telefone: 981380507
+    motorista = Motorista.new cpf: 1111111111,nome: "Jose", diasDeFolga: 0, bancoDeHoras: false, telefone: 981380507
     assert_not motorista.save
   end
 

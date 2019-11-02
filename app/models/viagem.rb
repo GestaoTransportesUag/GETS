@@ -8,10 +8,10 @@ class Viagem < ApplicationRecord
   validates :funcaoRequisitor, presence: true, numericality: false
   validates :cpfRequisitor, presence: true, length: {is: 11}, numericality: true
   validates :numAcompanhantes, presence: true, numericality: true
-  validates :dataPartida, presence: true, numericality: true
-  validates :dataChegada, presence: true, numericality: true
-  validates :horaSaida, presence: true, numericality: true
-  validates :horaChegada, presence: true, numericality: true
+  validates :dataPartida, presence: true, length: {minimum: 7, maximum: 8},numericality: true
+  validates :dataChegada, presence: true, length: {minimum: 7, maximum: 8}, numericality: true
+  validates :horaSaida, presence: true, length: {minimum: 3, maximum: 4}, numericality: true
+  validates :horaChegada, presence: true, length: {minimum: 3, maximum: 4}, numericality: true
   validates :destino, presence: true, numericality: false
 
   def self.search(search)
@@ -25,5 +25,12 @@ class Viagem < ApplicationRecord
     else
       Viagem.all
     end
+  end
+
+  public
+  def confirmarRealizacao
+    veiculo = self.veiculo
+    veiculo.setAlocado(false)
+    veiculo.save
   end
 end

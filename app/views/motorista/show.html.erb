@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>CPF:</strong>
+  <strong>Cpf:</strong>
   <%= @motorista.cpf %>
 </p>
 
@@ -11,12 +11,12 @@
 </p>
 
 <p>
-  <strong>Numero de Horas:</strong>
-  <%= @motorista.numeroDeHoras %>
+  <strong>Dias de folga:</strong>
+  <%= @motorista.diasDeFolga %>
 </p>
 
 <p>
-  <strong>Banco de Horas:</strong>
+  <strong>Banco de horas:</strong>
   <%= @motorista.bancoDeHoras %>
 </p>
 
@@ -25,5 +25,5 @@
   <%= @motorista.telefone %>
 </p>
 
-<%= link_to 'Editar', edit_motorista_path(@motorista), class: "btn btn-default" %> |
-<%= link_to 'Voltar', motorista_index_path, class: "btn btn-default" %>
+<%= link_to 'Editar', edit_motorista_path(@motorista), class:"btn btn-default" %>
+<%= link_to 'Voltar', motorista_index_path, class:"btn btn-default" %>

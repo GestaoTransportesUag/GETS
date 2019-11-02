@@ -3,13 +3,13 @@
 one:
   cpf: 
   nome: MyString
-  numeroDeHoras: 1
+  diasDeFolga: 
   bancoDeHoras: false
   telefone: 
 
 two:
   cpf: 
   nome: MyString
-  numeroDeHoras: 1
+  diasDeFolga: 
   bancoDeHoras: false
   telefone: 
