@@ -32,6 +32,9 @@ class ViagemsController < ApplicationController
       if @viagem.save
         format.html { redirect_to @viagem, notice: 'Viagem foi agendada com sucesso' }
         format.json { render :show, status: :created, location: @viagem }
+        @veiculo = @viagem.veiculo
+        @veiculo.setAlocado(true)
+        @veiculo.save
       else
         format.html { render :new }
         format.json { render json: @viagem.errors, status: :unprocessable_entity }
@@ -61,6 +64,13 @@ class ViagemsController < ApplicationController
       format.html { redirect_to viagems_url, notice: 'Viagem foi desagendada com sucesso' }
       format.json { head :no_content }
     end
+  end
+
+  public
+  def confirmarRealizacao
+    @veiculo = @viagem.veiculo
+    @veiculo.setAlocado(false)
+    @veiculo.save
   end
 
   private

@@ -75,5 +75,6 @@
   <%= @viagem.horaChegada %>
 </p>
 
+<%= link_to 'Já realizada', viagems_path, class: "btn btn-default ", :onclick => @viagem.confirmarRealizacao %>
 <%= link_to 'Editar', edit_viagem_path(@viagem), class:"btn btn-default" %> |
 <%= link_to 'Voltar', viagems_path, class:"btn btn-default" %>
