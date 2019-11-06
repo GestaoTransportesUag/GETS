@@ -20,4 +20,10 @@ class Motorista < ApplicationRecord
   def setFolga(setFolga)
     self.bancoDeHoras = setFolga
   end
+
+  public
+  def folgaCompensada()
+    self.bancoDeHoras = false
+    self.save
+  end
 end
