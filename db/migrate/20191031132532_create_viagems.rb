@@ -11,11 +11,9 @@ class CreateViagems < ActiveRecord::Migration[5.1]
       t.bigint :cpfRequisitor
       t.text :descricaoImprevistos
       t.integer :numAcompanhantes
-      t.bigint :dataPartida
-      t.bigint :dataChegada
+      t.datetime :dataPartida
+      t.datetime :dataChegada
       t.string :destino
-      t.bigint :horaSaida
-      t.bigint :horaChegada
 
       t.timestamps
     end

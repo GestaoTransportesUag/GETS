@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20191101124242) do
     t.text "descricao"
     t.float "custo"
     t.bigint "realizadoEm"
-    t.bigint "realizadoQuando"
+    t.date "realizadoQuando"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["usuario_id"], name: "index_manutencaos_on_usuario_id"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20191101124242) do
   create_table "motorista", force: :cascade do |t|
     t.bigint "cpf"
     t.string "nome"
-    t.bigint "diasDeFolga"
+    t.date "diasDeFolga"
     t.boolean "bancoDeHoras"
     t.bigint "telefone"
     t.datetime "created_at", null: false
@@ -69,11 +69,9 @@ ActiveRecord::Schema.define(version: 20191101124242) do
     t.bigint "cpfRequisitor"
     t.text "descricaoImprevistos"
     t.integer "numAcompanhantes"
-    t.bigint "dataPartida"
-    t.bigint "dataChegada"
+    t.datetime "dataPartida"
+    t.datetime "dataChegada"
     t.string "destino"
-    t.bigint "horaSaida"
-    t.bigint "horaChegada"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["motorista_id"], name: "index_viagems_on_motorista_id"

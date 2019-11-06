@@ -6,7 +6,7 @@ class CreateManutencaos < ActiveRecord::Migration[5.1]
       t.text :descricao
       t.float :custo
       t.bigint :realizadoEm
-      t.bigint :realizadoQuando
+      t.date :realizadoQuando
 
       t.timestamps
     end
