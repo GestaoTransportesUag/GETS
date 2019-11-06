@@ -15,4 +15,9 @@ class Motorista < ApplicationRecord
       Motorista.all
     end
   end
+
+  public
+  def setFolga(setFolga)
+    self.bancoDeHoras = setFolga
+  end
 end

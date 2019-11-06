@@ -63,6 +63,10 @@ class MotoristaController < ApplicationController
     end
   end
 
+  def setFolga(novaFolga)
+    @motorista.bancoDeHoras = novaFolga
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_motorista

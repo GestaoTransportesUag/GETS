@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20191101124242) do
     t.integer "veiculo_id"
     t.text "descricao"
     t.float "custo"
-    t.bigint "realizadoEm"
+    t.text "realizadoEm"
     t.date "realizadoQuando"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

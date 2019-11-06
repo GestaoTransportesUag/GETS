@@ -30,5 +30,8 @@ class Viagem < ApplicationRecord
     veiculo = self.veiculo
     veiculo.setAlocado(false)
     veiculo.save
+    motorista = self.motorista
+    motorista.setFolga(true)
+    motorista.save
   end
 end
