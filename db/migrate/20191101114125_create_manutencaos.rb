@@ -5,8 +5,8 @@ class CreateManutencaos < ActiveRecord::Migration[5.1]
       t.references :veiculo, foreign_key: true
       t.text :descricao
       t.float :custo
-      t.bigint :realizadoEm
-      t.bigint :realizadoQuando
+      t.text :realizadoEm
+      t.date :realizadoQuando
 
       t.timestamps
     end

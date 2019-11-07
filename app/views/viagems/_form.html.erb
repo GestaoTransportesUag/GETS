@@ -63,27 +63,17 @@
 
   <div class="field">
     <%= form.label :data_de_Partida %>
-    <%= form.text_field :dataPartida, id: :viagem_dataPartida %>
+    <%= form.datetime_field :dataPartida, id: :viagem_dataPartida %>
   </div>
 
   <div class="field">
     <%= form.label :data_de_Chegada %>
-    <%= form.text_field :dataChegada, id: :viagem_dataChegada %>
+    <%= form.datetime_field :dataChegada, id: :viagem_dataChegada %>
   </div>
 
   <div class="field">
     <%= form.label :destino %>
     <%= form.text_field :destino, id: :viagem_destino %>
-  </div>
-
-  <div class="field">
-    <%= form.label :horário_de_Saída %>
-    <%= form.text_field :horaSaida, id: :viagem_horaSaida %>
-  </div>
-
-  <div class="field">
-    <%= form.label :horário_de_Chegada %>
-    <%= form.text_field :horaChegada, id: :viagem_horaChegada %>
   </div>
 
   <div class="actions">

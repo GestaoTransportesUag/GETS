@@ -1,7 +1,7 @@
 <%= form_with(model: manutencao, local: true) do |form| %>
   <% if manutencao.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(manutencao.errors.count, "error") %> prohibited this manutencao from being saved:</h2>
+      <h2><%= pluralize(manutencao.errors.count, "erros") %> proíbem essa manutenção de ser registrada:</h2>
 
       <ul>
       <% manutencao.errors.full_messages.each do |message| %>
@@ -22,7 +22,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :descricao %>
+    <%= form.label :descrição %>
     <%= form.text_area :descricao, id: :manutencao_descricao %>
   </div>
 
@@ -32,13 +32,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :realizadoEm %>
+    <%= form.label :realizado_Em %>
     <%= form.text_field :realizadoEm, id: :manutencao_realizadoEm %>
   </div>
 
   <div class="field">
-    <%= form.label :realizadoQuando %>
-    <%= form.text_field :realizadoQuando, id: :manutencao_realizadoQuando %>
+    <%= form.label :realizado_Quando %>
+    <%= form.date_field :realizadoQuando, id: :manutencao_realizadoQuando %>
   </div>
 
   <div class="actions">

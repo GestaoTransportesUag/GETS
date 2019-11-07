@@ -71,6 +71,9 @@ class ViagemsController < ApplicationController
     @veiculo = @viagem.veiculo
     @veiculo.setAlocado(false)
     @veiculo.save
+    @motorista = @viagem.motorista
+    @motorista.setFolga(true)
+    @motorista.save
   end
 
   private
