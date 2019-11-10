@@ -19,4 +19,7 @@ class Manutencao < ApplicationRecord
       Manutencao.all
     end
   end
+
+
 end
+

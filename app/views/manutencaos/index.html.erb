@@ -18,5 +18,82 @@
     </ul>
   <% end %>
 <br>
+<table>
+  <tr>
+    <th>manutencao de óleo e filtro de óleo</th>
 
+  </tr>
+
+  <% @Vmanutencao.each do |manutencao|  %>
+        <tr>
+          <td> Placa <%= manutencao.placa %></td>
+        </tr>
+        <% end %>
+
+</table>
+
+<table>
+  <tr>
+    <th>manutencao de filro de combustível e de ar </th>
+
+  </tr>
+
+  <% @Vmanutencao20.each do |manutencao|  %>
+    <tr>
+      <td>Placa  <%= manutencao.placa %></td>
+    </tr>
+  <% end %>
+
+</table>
+
+<table>
+  <tr>
+    <th>manutencao de correia dentada</th>
+
+  </tr>
+
+  <% @Vmanutencao40.each do |manutencao|  %>
+    <tr>
+      <td>Placa  <%= manutencao.placa %></td>
+    </tr>
+  <% end %>
+</table>
+
+<table>
+  <tr>
+    <th>manutencao de velas </th>
+
+  </tr>
+
+  <% @VmanutencaoVela.each do |manutencao|  %>
+    <tr>
+      <td>Placa  <%= manutencao.placa %></td>
+    </tr>
+  <% end %>
+</table>
+
+<table>
+  <tr>
+    <th>manutencao de filtro separador </th>
+
+  </tr>
+
+  <% @VmanutencaoFiltro.each do |manutencao|  %>
+    <tr>
+      <td>Placa  <%= manutencao.placa %></td>
+    </tr>
+  <% end %>
+</table>
+<table>
+  <tr>
+    <th>manutencao de oleo de caixa </th>
+
+  </tr>
+
+  <% @VmanutencaoOleoCaixa.each do |manutencao|  %>
+    <tr>
+      <td>Placa  <%= manutencao.placa %></td>
+    </tr>
+  <% end %>
+</table>
 <%= link_to 'Agendar Manutenção', new_manutencao_path, class:"btn btn-default" %>
