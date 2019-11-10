@@ -1,24 +1,36 @@
+
 <p id="notice"><%= notice %></p>
-<div class = "title-container">
+
+<div class = "jumbotron text-center">
   <h1>Veículos</h1>
+  <p>Página principal que lista por placa e gerencia os véiculos já cadastrados</p>
 </div>
+
+<div class="container">
+  <div class="jumbotron">
+<div class="form-inline">
   <ul>
-    <%= form_tag veiculos_path, :method => 'get' do %>
-      <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "Buscando", :value => "Buscar" %>
+    <%= form_tag veiculos_path, :method => 'get' do  %>
+      <%= text_field_tag :search, params[:search], class: 'form-control'%>
+      <%= submit_tag "Buscando", :value => "Buscar", class: 'btn btn-default'%>
     <% end %>
   </ul>
+</div>
 
+
+
+<div class='btn-group-vertical'>
   <% @veiculos.each do |veiculo| %>
     <ul>
-      <li>
+
         <%= link_to veiculo.placa , veiculo_path(veiculo), class: "btn btn-default"%>
         <%= link_to "Remover", veiculo, data: {:confirm => "Deseja remover o veículo?"}, :method => :delete, class: "btn btn-default" %>
-      </li>
+
     </ul>
   <% end %>
 <br>
-
-<p>
-  <%= link_to 'Novo Veiculo', new_veiculo_path, class: "btn btn-default" %><br />
-</p>
+  <ul>
+  <%= link_to 'Novo veículo', new_veiculo_path, class: "btn btn-default btn-lg" %><br />
+  </ul>
+</div>
+  </div></div>
