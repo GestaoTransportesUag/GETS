@@ -31,7 +31,7 @@ class Veiculo < ApplicationRecord
   end
 
   def self.manunVelas()
-    self.where("quilometragem >= '40000' and modelo == 'sedan'")
+    self.where("quilometragem >= '40000' and modelo == 'passeio'")
   end
   def self.manunFiltroSep()
     self.where("quilometragem >= '20000' and modelo == 'ônibus'")
