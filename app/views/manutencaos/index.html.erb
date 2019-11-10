@@ -20,7 +20,7 @@
 <br>
 <table>
   <tr>
-    <th>carros pra muntencao;</th>
+    <th>manutencao de óleo e filtro de óleo</th>
 
   </tr>
 
@@ -32,4 +32,43 @@
 
 </table>
 
+<table>
+  <tr>
+    <th>manutencao de filro de combustível e de ar </th>
+
+  </tr>
+
+  <% @Vmanutencao20.each do |manutencao|  %>
+    <tr>
+      <td><%= manutencao.placa %></td>
+    </tr>
+  <% end %>
+
+</table>
+
+<table>
+  <tr>
+    <th>manutencao de correia dentada</th>
+
+  </tr>
+
+  <% @Vmanutencao40.each do |manutencao|  %>
+    <tr>
+      <td><%= manutencao.placa %></td>
+    </tr>
+  <% end %>
+</table>
+
+<table>
+  <tr>
+    <th>manutencao de velas </th>
+
+  </tr>
+
+  <% @VmanutencaoVela.each do |manutencao|  %>
+    <tr>
+      <td><%= manutencao.placa %></td>
+    </tr>
+  <% end %>
+</table>
 <%= link_to 'Agendar Manutenção', new_manutencao_path, class:"btn btn-default" %>
