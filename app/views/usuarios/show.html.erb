@@ -1,5 +1,11 @@
-<p id="notice"><%= notice %></p>
 
+<div class = "jumbotron text-center">
+  <p id="notice"><%= notice %></p>
+    <h1>Informações do usuário</h1>
+  </br>
+</div>
+<div class="container">
+  <div class="jumbotron">
 <p>
   <strong>CPF:</strong>
   <%= @usuario.cpf %>
@@ -30,6 +36,8 @@
   <%= @usuario.capacidadeDeGerencia %>
 </p>
 
-<%= link_to 'Editar', edit_usuario_path(@usuario), class: "btn btn-default" %> |
+<%= link_to 'Editar', edit_usuario_path(@usuario), class: "btn btn-default" %>
 <%= link_to 'Voltar', usuarios_path, class: "btn btn-default" %>
 
+  </div>
+</div>

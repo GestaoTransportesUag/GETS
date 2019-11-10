@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
-
-<p>
+<div class = "jumbotron text-center">
+  <h1>Informações do véiculo</h1>
+</br>
+</div>
+<div class="container">
+<div class="jumbotron">
+  <p>
   <strong>Placa:</strong>
   <%= @veiculo.placa %>
 </p>
@@ -35,5 +40,7 @@
   <%= @veiculo.alocado %>
 </p>
 
-<%= link_to 'Editar', edit_veiculo_path(@veiculo), class: "btn btn-default" %> |
+<%= link_to 'Editar', edit_veiculo_path(@veiculo), class: "btn btn-default" %>
 <%= link_to 'Voltar', veiculos_path, class: "btn btn-default"%>
+</div>
+</div>
