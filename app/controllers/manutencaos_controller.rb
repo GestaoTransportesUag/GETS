@@ -9,6 +9,8 @@ class ManutencaosController < ApplicationController
     @Vmanutencao20 = Veiculo.manun20()
     @Vmanutencao40 = Veiculo.manun40()
     @VmanutencaoVela = Veiculo.manunVelas()
+    @VmanutencaoFiltro = Veiculo.manunFiltroSep()
+    @VmanutencaoOleoCaixa = Veiculo.manunOleoCaixa
   end
 
   # GET /manutencaos/1

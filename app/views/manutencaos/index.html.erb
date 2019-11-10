@@ -26,7 +26,7 @@
 
   <% @Vmanutencao.each do |manutencao|  %>
         <tr>
-          <td><%= manutencao.placa %></td>
+          <td> Placa <%= manutencao.placa %></td>
         </tr>
         <% end %>
 
@@ -40,7 +40,7 @@
 
   <% @Vmanutencao20.each do |manutencao|  %>
     <tr>
-      <td><%= manutencao.placa %></td>
+      <td>Placa  <%= manutencao.placa %></td>
     </tr>
   <% end %>
 
@@ -54,7 +54,7 @@
 
   <% @Vmanutencao40.each do |manutencao|  %>
     <tr>
-      <td><%= manutencao.placa %></td>
+      <td>Placa  <%= manutencao.placa %></td>
     </tr>
   <% end %>
 </table>
@@ -67,7 +67,32 @@
 
   <% @VmanutencaoVela.each do |manutencao|  %>
     <tr>
-      <td><%= manutencao.placa %></td>
+      <td>Placa  <%= manutencao.placa %></td>
+    </tr>
+  <% end %>
+</table>
+
+<table>
+  <tr>
+    <th>manutencao de filtro separador </th>
+
+  </tr>
+
+  <% @VmanutencaoFiltro.each do |manutencao|  %>
+    <tr>
+      <td>Placa  <%= manutencao.placa %></td>
+    </tr>
+  <% end %>
+</table>
+<table>
+  <tr>
+    <th>manutencao de oleo de caixa </th>
+
+  </tr>
+
+  <% @VmanutencaoOleoCaixa.each do |manutencao|  %>
+    <tr>
+      <td>Placa  <%= manutencao.placa %></td>
     </tr>
   <% end %>
 </table>

@@ -33,6 +33,13 @@ class Veiculo < ApplicationRecord
   def self.manunVelas()
     self.where("quilometragem >= '40000' and modelo == 'sedan'")
   end
+  def self.manunFiltroSep()
+    self.where("quilometragem >= '20000' and modelo == 'ônibus'")
+  end
+  def self.manunOleoCaixa()
+    self.where("quilometragem >= '100000'")
+  end
+
   public
   def setAlocado(novoAlocado)
     self.alocado = novoAlocado
