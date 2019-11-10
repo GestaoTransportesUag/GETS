@@ -1,4 +1,11 @@
 <p id="notice"><%= notice %></p>
+<div class = "jumbotron text-center">
+  <h1>Informações da manuntenção</h1>
+  </br>
+</div>
+<div class="container">
+  <div class="jumbotron">
+    <p>
 
 <p>
   <strong>Usuario:</strong>
@@ -30,5 +37,7 @@
   <%= @manutencao.realizadoQuando %>
 </p>
 
-<%= link_to 'Editar', edit_manutencao_path(@manutencao), class:"btn btn-default" %> |
+<%= link_to 'Editar', edit_manutencao_path(@manutencao), class:"btn btn-default" %>
 <%= link_to 'Voltar', manutencaos_path, class:"btn btn-default"  %>
+  </div>
+</div>

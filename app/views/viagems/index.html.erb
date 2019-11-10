@@ -1,26 +1,32 @@
 <p id="notice"><%= notice %></p>
-<div class = "title-container">
-  <h1>Viagens</h1>
+<div class = "jumbotron text-center">
+  <h1>Viagens <%= image_tag("travel.png", :alt => "bus",  height: 55, width: 55) %></h1>
+  <p>Página principal que lista e gerencia os viagens já cadastradas</p>
 </div>
 
-</div>
+<div class="container">
+  <div class="jumbotron">
+    <div class="form-inline">
 <ul>
   <%= form_tag viagems_path, :method => 'get' do %>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Buscando", :value => "Buscar" %>
   <% end %>
 </ul>
+    </div>
+    <div class='btn-group-vertical'>
 
 <% @viagems.each do |viagem| %>
   <ul>
-    <li>
       <%= link_to viagem.destino, viagem_path(viagem), class: "btn btn-default" %>
       <%= link_to "Desagendar", viagem, data: {:confirm => "Deseja desagendar a viagem?"}, :method => :delete, class: "btn btn-default" %>
-    </li>
   </ul>
 <% end %>
 <br>
 
 <br>
 
-<%= link_to 'Agendar Viagem', new_viagem_path, class: "btn btn-default" %>
+      <ul><%= link_to 'Agendar viagem', new_viagem_path, class: "btn btn-default btn-lg" %></ul>
+    </div>
+  </div>
+</div>

@@ -1,26 +1,31 @@
 <p id="notice"><%= notice %></p>
-<div class = "title-container">
-  <h1>Manutenções</h1>
+<div class = "jumbotron text-center">
+  <h1>Manutenções <%= image_tag("tool.png", :alt => "bus",  height: 55, width: 55) %></h1>
+  <p>Página principal que lista por placa e os veículos que precisam de alguma manutenção</p>
 </div>
+
+<div class="container">
+  <div class="jumbotron">
+    <div class="form-inline">
   <ul>
     <%= form_tag manutencaos_path, :method => 'get' do %>
       <%= text_field_tag :search, params[:search] %>
       <%= submit_tag "Buscando", :value => "Buscar" %>
     <% end %>
   </ul>
+    </div>
 
   <% @manutencaos.each do |manutencao| %>
     <ul>
-      <li>
+
         <%= link_to manutencao.realizadoQuando, manutencao_path(manutencao), class: "btn btn-default" %>
-        <%= link_to "Desagendar", manutencao, data: {:confirm => "Deseja remover o usuário?"}, :method => :delete, class: "btn btn-default" %>
-      </li>
+        <%= link_to "Desagendar", manutencao, data: {:confirm => "Deseja realmente desagendar esta manutenção?"}, :method => :delete, class: "btn btn-default" %>
     </ul>
   <% end %>
 <br>
-<table>
+  <table class="table table-bordered">
   <tr>
-    <th>manutencao de óleo e filtro de óleo</th>
+    <th bgcolor="#000000"><font color="#ffffff">Manutenção de óleo e filtro de óleo</font>/th>
 
   </tr>
 
@@ -30,11 +35,8 @@
         </tr>
         <% end %>
 
-</table>
-
-<table>
   <tr>
-    <th>manutencao de filro de combustível e de ar </th>
+    <th bgcolor="#000000"><font color="#ffffff">Manutenção de filtro de combustível e de ar</font></th>
 
   </tr>
 
@@ -44,11 +46,8 @@
     </tr>
   <% end %>
 
-</table>
-
-<table>
   <tr>
-    <th>manutencao de correia dentada</th>
+    <th bgcolor="#000000"><font color="#ffffff">Manutenção de correia dentada</font></th>
 
   </tr>
 
@@ -57,11 +56,9 @@
       <td>Placa  <%= manutencao.placa %></td>
     </tr>
   <% end %>
-</table>
 
-<table>
   <tr>
-    <th>manutencao de velas </th>
+    <th bgcolor="#000000"><font color="#ffffff">Manutenção de velas </font></th>
 
   </tr>
 
@@ -70,11 +67,9 @@
       <td>Placa  <%= manutencao.placa %></td>
     </tr>
   <% end %>
-</table>
 
-<table>
   <tr>
-    <th>manutencao de filtro separador </th>
+    <th bgcolor="#000000"><font color="#ffffff">Manutenção de filtro separador </font></th>
 
   </tr>
 
@@ -83,10 +78,9 @@
       <td>Placa  <%= manutencao.placa %></td>
     </tr>
   <% end %>
-</table>
-<table>
+
   <tr>
-    <th>manutencao de oleo de caixa </th>
+    <th bgcolor="#000000"><font color="#ffffff">Manutenção de óleo de caixa </font></th>
 
   </tr>
 
@@ -96,4 +90,7 @@
     </tr>
   <% end %>
 </table>
-<%= link_to 'Agendar Manutenção', new_manutencao_path, class:"btn btn-default" %>
+<%= link_to 'Agendar manutenção', new_manutencao_path, class:"btn btn-default" %>
+    </div>
+  </div>
+</div></div>
