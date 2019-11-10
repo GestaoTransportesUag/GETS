@@ -7,28 +7,27 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap.min.js" rel="stylesheet" type="text/css">
   </head>
 
   <body>
-    <header class="container">
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <%= link_to "Página Inicial", welcome_index_path, class: "navbar-brand" %>
-          </div>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#"> <%= link_to "Página Inicial", welcome_index_path, class: "navbar-brand" %></a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><%= link_to 'Veiculos', veiculos_path %></li>
+        <li><%= link_to 'Usuarios', usuarios_path %></li>
+        <li><%= link_to 'Motoristas', motorista_index_path %></li>
+        <li><%= link_to 'Viagens', viagems_path %></li>
+        <li><%= link_to 'Manutenções', manutencaos_path %></li>
+      </ul>
+    </div>
+  </nav>
 
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to 'Veiculos', veiculos_path %><br /></li>
-            <li><%= link_to 'Usuarios', usuarios_path %><br /></li>
-            <li><%= link_to 'Motoristas', motorista_index_path %></li>
-            <li><%= link_to 'Viagens', viagems_path %></li>
-            <li><%= link_to 'Manutenções', manutencaos_path %></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
 
-    <section class="container">
+  <section class="container">
       <div id="flash">
         <% flash.each do |key, value| %>
           <div class="flash alert <%= alert_class(key) %>"><%= value %></div>
