@@ -18,6 +18,11 @@ class Veiculo < ApplicationRecord
     end
   end
 
+  def self.manun()
+    x = 100
+    self.where("quilometragem>= '10000'")
+  end
+
   public
   def setAlocado(novoAlocado)
     self.alocado = novoAlocado

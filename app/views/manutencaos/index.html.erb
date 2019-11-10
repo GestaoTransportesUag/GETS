@@ -18,5 +18,18 @@
     </ul>
   <% end %>
 <br>
+<table>
+  <tr>
+    <th>carros pra muntencao;</th>
+
+  </tr>
+
+  <% @Vmanutencao.each do |manutencao|  %>
+        <tr>
+          <td><%= manutencao.placa %></td>
+        </tr>
+        <% end %>
+
+</table>
 
 <%= link_to 'Agendar Manutenção', new_manutencao_path, class:"btn btn-default" %>

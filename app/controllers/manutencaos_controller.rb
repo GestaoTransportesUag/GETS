@@ -5,12 +5,14 @@ class ManutencaosController < ApplicationController
   # GET /manutencaos.json
   def index
     @manutencaos = Manutencao.search(params[:search])
+    @Vmanutencao = Veiculo.manun()
   end
 
   # GET /manutencaos/1
   # GET /manutencaos/1.json
   def show
     @manutencaos = Manutencao.find(params[:id])
+
   end
 
   # GET /manutencaos/new
