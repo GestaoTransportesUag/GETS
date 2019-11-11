@@ -7,7 +7,7 @@ Feature: Usuario
     Given eu estou na pagina inicial
     When eu clico no link chamado Usuarios
     And estou na pagina que lista usuarios
-    And eu clico em Novo Usuario
+    And eu clico em Novo usuario
     And estou na pagina de adicionar um usuario
     And eu preencho os campos CPF com "70526991410", nome com "Arnaldo", senha "123456", email "arnaldovitorbarros@gmail.com" e telefone "99836613"
     And eu clico em Create Usuario
@@ -44,7 +44,7 @@ Feature: Usuario
     Given eu estou na pagina inicial
     When eu clico no link chamado Usuarios
     And estou na pagina que lista usuarios
-    And eu clico em Novo Usuario
+    And eu clico em Novo usuario
     And estou na pagina de adicionar um usuario
     And eu preencho os campos CPF com "7", nome com "Arnaldo", senha "123456", email "arnaldovitorbarros@gmail.com" e telefone "99836613"
     And eu clico em Create Usuario

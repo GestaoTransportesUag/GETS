@@ -6,12 +6,12 @@ When("estou na pagina que lista usuarios") do
   expect(page).to have_content("Usuarios")
 end
 
-When("eu clico em Novo Usuario") do
-  click_link 'Novo Usuario'
+When("eu clico em Novo usuario") do
+  click_link 'Novo usuário'
 end
 
 When("estou na pagina de adicionar um usuario") do
-  expect(page).to have_content("Novo Usuario")
+  expect(page).to have_content("Cadastrar usuário")
 end
 
 When("eu preencho os campos CPF com {string}, nome com {string}, senha {string}, email {string} e telefone {string}") do |cpf, nome, senha, email, telefone|
@@ -26,13 +26,14 @@ When("eu clico em Create Usuario") do
   click_button 'Create Usuario'
 end
 
+
 Then("eu devo ver que o usuario com nome {string} foi adicionado corretamente") do |nome|
   visit '/usuarios'
   expect(page).to have_selector(:link_or_button, nome)
 end
 
 When("eu vejo um usuario com nome {string} ja existente") do |nome|
-  click_link 'Novo Usuario'
+  click_link 'Novo usuário'
   fill_in 'usuario[cpf]', :with => '70526991410'
   fill_in 'usuario[nome]', :with => nome
   fill_in 'usuario[senha]', :with => '123456'

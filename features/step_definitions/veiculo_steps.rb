@@ -10,17 +10,17 @@ When("estou na pagina que lista veiculos") do
   expect(page).to have_content("Veiculos")
 end
 
-When("eu clico em Novo Veiculo") do
-  click_link 'Novo Veiculo'
+When("eu clico em Novo veiculo") do
+  click_link 'Novo veículo'
 end
 
 When("estou na pagina de adicionar um veiculo") do
-  expect(page).to have_content("Novo Veiculo")
+  expect(page).to have_content("Cadastrar veículo")
 end
 
 When("eu preencho os campos de placa com {string}, modelo com {string}, ano com {string}, cor com {string} e quilometragem com {string}") do |placa, modelo, ano, cor, quilometragem|
   fill_in 'veiculo[placa]', :with => placa
-  fill_in 'veiculo[modelo]', :with => modelo
+  select modelo, :from => "veiculo[modelo]"
   fill_in 'veiculo[ano]', :with => ano
   fill_in 'veiculo[cor]', :with => cor
   fill_in 'veiculo[quilometragem]', :with => quilometragem
@@ -36,9 +36,9 @@ When("eu devo ver que o veiculo com placa {string} foi adicionado corretamente")
 end
 
 When("eu vejo um veiculo com placa {string} ja existente") do |placa|
-  click_link 'Novo Veiculo'
+  click_link 'Novo veículo'
   fill_in 'veiculo[placa]', :with => placa
-  fill_in 'veiculo[modelo]', :with => 'caminhonete'
+  select "hatch", :from => "veiculo[modelo]"
   fill_in 'veiculo[ano]', :with => '1198'
   fill_in 'veiculo[cor]', :with => 'azul'
   fill_in 'veiculo[quilometragem]', :with => '1000'
@@ -77,7 +77,7 @@ end
 
 Then("eu devo ver que o veiculo com a placa {string} tem as informacoes corretas") do |placa|
   expect(page).to have_content(placa)
-  expect(page).to have_content('caminhonete')
+  expect(page).to have_content('hatch')
   expect(page).to have_content('1198')
   expect(page).to have_content('azul')
   expect(page).to have_content('1000')
