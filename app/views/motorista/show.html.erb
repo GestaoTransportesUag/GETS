@@ -1,5 +1,10 @@
-<p id="notice"><%= notice %></p>
-
+<div class="jumbotrom text-center">
+  <p id="notice"><%= notice %></p>
+    <h1>Informações do motorista</h1>
+  </br>
+</div>
+<div class="container">
+  <div class="jumbotron">
 <p>
   <strong>Cpf:</strong>
   <%= @motorista.cpf %>
@@ -28,3 +33,6 @@
 <%= link_to 'Folga compensada', motorista_index_path, class:"btn btn-default", :onclick => @motorista.folgaCompensada %>
 <%= link_to 'Editar', edit_motorista_path(@motorista), class:"btn btn-default" %>
 <%= link_to 'Voltar', motorista_index_path, class:"btn btn-default" %>
+
+  </div>
+</div>

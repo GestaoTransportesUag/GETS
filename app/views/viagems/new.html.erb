@@ -1,5 +1,10 @@
-<h1>Agendamento de Viagem</h1>
-
+<div class="jumbotron text-center">
+  <h1>Agendar viagem</h1>
+  <p>Página para agendar uma viagem existente</p>
+</div>
+<div class="container">
+  <div class="jumbotron">
 <%= render 'form', viagem: @viagem %>
-
 <%= link_to 'Voltar', viagems_path, class: "btn btn-default" %>
+  </div>
+</div>
