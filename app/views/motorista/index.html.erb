@@ -1,7 +1,10 @@
 <p id="notice"><%= notice %></p>
-<div class= "title-container">
-  <h1>Motoristas</h1>
+<div class= "jumbotron text-center">
+  <h1>Motoristas <%= image_tag("driver.png", :alt => "bus", height: 55, width: 55) %></h1>
+  <p1>Página principal que lista por nome os motoristas já cadastrados</p1>
 </div>
+<div class="container">
+  <div class="jumbotron">
   <ul>
     <%= form_tag motorista_index_path, :method => 'get' do %>
       <%= text_field_tag :search, params[:search] %>
@@ -18,5 +21,8 @@
     </ul>
   <% end %>
 <br>
-
-<%= link_to 'Novo Motorista', new_motorista_path, class:"btn btn-default" %>
+<ul>
+  <%= link_to 'Novo Motorista', new_motorista_path, class:"btn btn-default" %>
+</ul>
+  </div>
+</div>

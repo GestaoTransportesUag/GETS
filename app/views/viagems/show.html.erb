@@ -1,5 +1,10 @@
-<p id="notice"><%= notice %></p>
-
+<div class = "jumbotron text-center">
+  <p id="notice"><%= notice %></p>
+  <h1>Informações da viagem</h1>
+  </br>
+</div>
+<div class="container">
+  <div class="jumbotron">
 <p>
   <strong>Usuário:</strong>
   <%= @viagem.usuario.nome %>
@@ -65,8 +70,9 @@
   <%= @viagem.destino %>
 </p>
 
-<p>
-
 <%= link_to 'Já realizada', viagems_path, class: "btn btn-default ", :onclick => @viagem.confirmarRealizacao %>
 <%= link_to 'Editar', edit_viagem_path(@viagem), class:"btn btn-default" %> |
 <%= link_to 'Voltar', viagems_path, class:"btn btn-default" %>
+
+  </div>
+</div>
