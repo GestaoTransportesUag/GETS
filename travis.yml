@@ -1,20 +1,3 @@
 language: ruby
-
 rvm:
-  - ruby-head
-
-before_install:
-  - gem install bundler:2.0.2
-
-script:
-  - bundle exec rake db:create:all
-  - bundle exec rake dv:migrate RAILS_ENV=test
-  - ruby -Itest test/models_motorista_test.rb
-  - ruby -Itest test/models_usuario_test.rb
-  - ruby -Itest test/models_veiculo_test.rb
-  - ruby -S bundle exec cucumber --profile default
-  -
-services:
-  - postgresql
-
-dist: trusty
+  - 2.3.3
