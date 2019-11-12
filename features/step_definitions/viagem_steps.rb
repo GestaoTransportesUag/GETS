@@ -108,7 +108,7 @@ When("eu vejo uma viagem com destino {string} ja existente") do |destino|
   click_button "Create Viagem"
 
   visit "/viagems"
-  expect(page).to have_content(:link_or_button, destino)
+  expect(page).to have_content(destino)
 end
 
 When("eu clico no botao Remover ao lado da viagem com destino {string}") do |destino|
