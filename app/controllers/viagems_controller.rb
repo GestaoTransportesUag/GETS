@@ -16,6 +16,9 @@ class ViagemsController < ApplicationController
   # GET /viagems/new
   def new
     @viagem = Viagem.new
+    @usuario= Usuario.all
+    @veiculo =Veiculo.all
+    @motorista =Motorista.all
   end
 
   # GET /viagems/1/edit
