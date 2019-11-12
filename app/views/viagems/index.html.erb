@@ -19,7 +19,7 @@
 <% @viagems.each do |viagem| %>
   <ul>
       <%= link_to viagem.destino, viagem_path(viagem), class: "btn btn-default" %>
-      <%= link_to "Desagendar", viagem, data: {:confirm => "Deseja desagendar a viagem?"}, :method => :delete, class: "btn btn-default" %>
+      <%= link_to "Desagendar "+viagem.destino, viagem, data: {:confirm => "Deseja desagendar a viagem?"}, :method => :delete, class: "btn btn-default" %>
   </ul>
 <% end %>
 <br>

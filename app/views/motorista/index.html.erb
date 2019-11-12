@@ -16,7 +16,7 @@
     <ul>
       <li>
         <%= link_to motorista.nome, motorista_path(motorista), class: "btn btn-default" %>
-        <%= link_to "Remover", motorista, data: {:confirm => "Deseja remover o usuário?"}, :method => :delete, class: "btn btn-default" %>
+        <%= link_to "Remover "+motorista.nome, motorista, data: {:confirm => "Deseja remover o usuário?"}, :method => :delete, class: "btn btn-default" %>
       </li>
     </ul>
   <% end %>

@@ -24,6 +24,10 @@ When("eu clico em Create Motorista") do
   click_button 'Create Motorista'
 end
 
+When("eu clico no botao remover ao lado do motorista {string}") do |nome|
+  click_on("Remover "+nome)
+end
+
 Then("eu devo ver que o motorista com nome {string} foi adicionado corretamente") do |nome|
   visit '/motorista'
   expect(page).to have_selector(:link_or_button, nome)
