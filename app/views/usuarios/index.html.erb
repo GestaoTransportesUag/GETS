@@ -15,7 +15,7 @@
   <% @usuarios.each do |usuario| %>
     <ul>
         <%= link_to usuario.nome, usuario_path(usuario), class: "btn btn-default" %>
-        <%= link_to "Remover", usuario, data: {:confirm => "Deseja remover o usuário?"}, :method => :delete, class: "btn btn-default" %>
+        <%= link_to "Remover "+usuario.nome, usuario, data: {:confirm => "Deseja remover o usuário?"}, :method => :delete, class: "btn btn-default" %>
     </ul>
   <% end %>
 <br>

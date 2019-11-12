@@ -44,6 +44,11 @@ When("eu vejo um usuario com nome {string} ja existente") do |nome|
   expect(page).to have_selector(:link_or_button, nome)
 end
 
+When("eu clico no botao remover ao lado do usuario com nome {string}") do |nome|
+  expect(page).to have_selector(:link_or_button, nome)
+  click_link ('Remover '+nome)
+end
+
 Then("eu devo ver que o usuario com nome {string} foi removido corretamente") do |nome|
   expect(page).not_to have_selector(:link_or_button, nome)
 end

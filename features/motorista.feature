@@ -18,7 +18,7 @@ Feature: Motorista
     When eu clico no link chamado Motoristas
     And estou na pagina que lista motoristas
     And eu vejo um motorista com nome "Arnaldo" ja existente
-    And eu clico no botao Remover
+    And eu clico no botao remover ao lado do motorista "Arnaldo"
     Then eu devo ver que o motorista com nome "Arnaldo" foi removido corretamente
 
   Scenario: alterar corretamente as informacoes de um motorista

@@ -47,8 +47,8 @@ When("eu vejo um veiculo com placa {string} ja existente") do |placa|
   expect(page).to have_selector(:link_or_button, placa)
 end
 
-When("eu clico no botao Remover") do
-  click_link 'Remover'
+When("eu clico no botao Remover ao lado do veiculo com placa {string}") do |placa|
+  click_on('Remover '+placa)
 end
 
 Then("eu devo ver que o veiculo com a placa {string} foi removido corretamente") do |placa|
