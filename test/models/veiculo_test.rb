@@ -10,12 +10,12 @@ class VeiculoTest < ActiveSupport::TestCase
   end
 
   test 'Nao deve salvar um veiculo sem quilometragem' do
-    veiculo = Veiculo.new placa: "aaa1111", modelo: "Gol", ano: 2010,  cor: "branco"
+    veiculo = Veiculo.new placa: "aaa1111", modelo: "caminhonete", ano: 2010,  cor: "branco"
     assert_not veiculo.save
   end
 
   test 'Nao deve salvar um usuario com placa menor que 7 digitos' do
-    veiculo = Veiculo.new placa: "aaa11", modelo: "Gol", ano: 2010,  cor: "branco", quilometragem: 0000
+    veiculo = Veiculo.new placa: "aaa11", modelo: "caminhonete", ano: 2010,  cor: "branco", quilometragem: 0000
     assert_not veiculo.save
   end
 end
