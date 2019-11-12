@@ -60,9 +60,9 @@ When("eu clico em Create Viagem") do
   click_button "Create Viagem"
 end
 
-When("eu devo ver que a viagem com destino {string} foi agendada corretamente") do |destino|
+Then("eu devo ver que a viagem com destino {string} foi agendada corretamente") do |destino|
   visit '/viagems'
-  expect(page).to have_selector(:link_or_button, destino)
+  expect(page).to have_content(destino)
 end
 
 When("eu vejo uma viagem com destino {string} ja existente") do |destino|
@@ -108,7 +108,7 @@ When("eu vejo uma viagem com destino {string} ja existente") do |destino|
   click_button "Create Viagem"
 
   visit "/viagems"
-  expect(page).to have_content(destino)
+  expect(page).to have_selector(:link_or_button, destino)
 end
 
 When("eu clico no botao Remover ao lado da viagem com destino {string}") do |destino|
