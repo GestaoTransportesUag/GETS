@@ -38,7 +38,7 @@ end
 When("eu vejo um veiculo com placa {string} ja existente") do |placa|
   click_link 'Novo veículo'
   fill_in 'veiculo[placa]', :with => placa
-  select "hatch", :from => "veiculo[modelo]"
+  select "passeio", :from => "veiculo[modelo]"
   fill_in 'veiculo[ano]', :with => '1198'
   fill_in 'veiculo[cor]', :with => 'azul'
   fill_in 'veiculo[quilometragem]', :with => '1000'
@@ -77,7 +77,7 @@ end
 
 Then("eu devo ver que o veiculo com a placa {string} tem as informacoes corretas") do |placa|
   expect(page).to have_content(placa)
-  expect(page).to have_content('hatch')
+  expect(page).to have_content('passeio')
   expect(page).to have_content('1198')
   expect(page).to have_content('azul')
   expect(page).to have_content('1000')

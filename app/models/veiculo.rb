@@ -19,7 +19,7 @@ class Veiculo < ApplicationRecord
   end
 
   def self.manun10()
-    self.where("quilometragem >= '10000'")
+    self.where("quilometragem % 10000 == 0")
   end
 
   def self.manun20()

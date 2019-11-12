@@ -9,7 +9,7 @@ Feature: Veiculo
     And estou na pagina que lista veiculos
     And eu clico em Novo veiculo
     And estou na pagina de adicionar um veiculo
-    And eu preencho os campos de placa com "HX576CA", modelo com "hatch", ano com "1998", cor com "Vermelho" e quilometragem com "10000"
+    And eu preencho os campos de placa com "HX576CA", modelo com "passeio", ano com "1998", cor com "Vermelho" e quilometragem com "10000"
     And eu clico em Create Veiculo
     Then eu devo ver que o veiculo com placa "HX576CA" foi adicionado corretamente
 
