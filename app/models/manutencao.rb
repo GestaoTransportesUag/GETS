@@ -9,9 +9,9 @@ class Manutencao < ApplicationRecord
 
   def self.search(search)
     if search
-      manutencao = Manutencao.find_by(realizadoQuando: search)
+      manutencao = Manutencao.find_by(descricao: search)
       if manutencao
-        self.where(realizadoQuando: manutencao.realizadoQuando)
+        self.where(descricao: manutencao.descricao)
       else
         Manutencao.all
       end

@@ -18,7 +18,7 @@
   <% @manutencaos.each do |manutencao| %>
     <ul>
 
-        <%= link_to manutencao.realizadoQuando, manutencao_path(manutencao), class: "btn btn-default" %>
+        <%= link_to manutencao.descricao, manutencao_path(manutencao), class: "btn btn-default" %>
         <%= link_to "Desagendar", manutencao, data: {:confirm => "Deseja realmente desagendar esta manutenção?"}, :method => :delete, class: "btn btn-default" %>
     </ul>
   <% end %>
