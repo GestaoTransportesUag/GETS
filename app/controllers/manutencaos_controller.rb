@@ -23,6 +23,8 @@ class ManutencaosController < ApplicationController
   # GET /manutencaos/new
   def new
     @manutencao = Manutencao.new
+    @usuario = Usuario.all
+    @veiculo = Veiculo.all
   end
 
   # GET /manutencaos/1/edit
