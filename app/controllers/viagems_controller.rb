@@ -24,6 +24,9 @@ class ViagemsController < ApplicationController
   # GET /viagems/1/edit
   def edit
     @viagem = Viagem.find(params[:id])
+    @usuario= Usuario.all
+    @veiculo =Veiculo.all
+    @motorista =Motorista.all
   end
 
   # POST /viagems
