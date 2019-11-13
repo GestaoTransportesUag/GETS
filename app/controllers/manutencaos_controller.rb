@@ -5,12 +5,6 @@ class ManutencaosController < ApplicationController
   # GET /manutencaos.json
   def index
     @manutencaos = Manutencao.search(params[:search])
-    @Vmanutencao = Veiculo.manun10()
-    @Vmanutencao20 = Veiculo.manun20()
-    @Vmanutencao40 = Veiculo.manun40()
-    @VmanutencaoVela = Veiculo.manunVelas()
-    @VmanutencaoFiltro = Veiculo.manunFiltroSep()
-    @VmanutencaoOleoCaixa = Veiculo.manunOleoCaixa
   end
 
   # GET /manutencaos/1

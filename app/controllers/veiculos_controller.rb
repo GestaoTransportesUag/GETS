@@ -26,6 +26,7 @@ class VeiculosController < ApplicationController
   # POST /veiculos
   # POST /veiculos.json
   def create
+    @veiculo = Veiculo.new
     @veiculo = Veiculo.new(veiculo_params)
 
     respond_to do |format|
