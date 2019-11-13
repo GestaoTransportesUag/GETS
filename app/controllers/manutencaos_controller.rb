@@ -24,6 +24,8 @@ class ManutencaosController < ApplicationController
   # GET /manutencaos/1/edit
   def edit
     @manutencaos = Manutencao.find(params[:id])
+    @usuario = Usuario.all
+    @veiculo = Veiculo.all
   end
 
   # POST /manutencaos
