@@ -22,5 +22,15 @@
       <p>O projeto foi solicitado pelo sr. Amadeu Bezerra da Silva, chefe do <a href="https://goo.gl/maps/i3tb1LyxfXpN8HMQ8">Setor de Transportes da UAG</a> com objetivo de tornar mais fácil a gestão do setor</p>
       </center>
     </div>
+    <% if current_user %>
+      Logged in as <%= current_user.email %>.
+      <%= link_to "Log Out", logout_path %>
+    <% else %>
+      <%= link_to "Sign Up", signup_path %> or
+      <%= link_to "Log In", login_path %>
+    <% end %>
+    <p id=”notice”><%= notice %></p>
+    <h1>Example</h1>
+    <p>Lorem ipsum …</p>
   </div>
 </div>
