@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191101124242) do
+ActiveRecord::Schema.define(version: 20191101114125) do
 
   create_table "manutencaos", force: :cascade do |t|
     t.integer "usuario_id"
