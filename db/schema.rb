@@ -54,8 +54,6 @@ ActiveRecord::Schema.define(version: 20191101114125) do
     t.integer "ano"
     t.string "cor"
     t.bigint "quilometragem"
-    t.boolean "manutencaoEmDia"
-    t.boolean "alocado"
     t.boolean "ativo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -75,6 +73,7 @@ ActiveRecord::Schema.define(version: 20191101114125) do
     t.datetime "dataPartida"
     t.datetime "dataChegada"
     t.string "destino"
+    t.boolean "realizada"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["motorista_id"], name: "index_viagems_on_motorista_id"

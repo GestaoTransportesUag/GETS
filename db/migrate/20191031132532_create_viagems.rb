@@ -14,6 +14,7 @@ class CreateViagems < ActiveRecord::Migration[5.1]
       t.datetime :dataPartida
       t.datetime :dataChegada
       t.string :destino
+      t.boolean :realizada
 
       t.timestamps
     end

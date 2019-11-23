@@ -23,7 +23,7 @@
   <% @veiculos.each do |veiculo| %>
 
     <ul>
-      <%if veiculo.alocado == TRUE%>
+      <%if veiculo.ativo == TRUE%>
         <%= image_tag("g.ico", :alt => "bus",  height: 13, width: 13) %></h1>
         <%else %><%= image_tag("r.ico", :alt => "bus",  height: 13, width: 13) %></h1>
       <% end %>
