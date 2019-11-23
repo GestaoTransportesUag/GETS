@@ -17,9 +17,4 @@ class Veiculo < ApplicationRecord
       Veiculo.all
     end
   end
-
-  public
-  def setAlocado(novoAlocado)
-    self.alocado = novoAlocado
-  end
 end

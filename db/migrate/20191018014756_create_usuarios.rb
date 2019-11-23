@@ -7,6 +7,7 @@ class CreateUsuarios < ActiveRecord::Migration[5.1]
       t.string :email
       t.bigint :telefone
       t.boolean :capacidadeDeGerencia
+      t.boolean :ativo
       t.timestamps
     end
   end

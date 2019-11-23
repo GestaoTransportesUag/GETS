@@ -5,7 +5,6 @@ class Manutencao < ApplicationRecord
   validates :descricao, numericality: false, presence: true
   validates :custo, numericality: true, presence: true
   validates :realizadoEm, numericality: false, presence: true
-  validates :realizadoQuando, presence: true
 
   def self.search(search)
     if search

@@ -23,13 +23,12 @@
   <% @veiculos.each do |veiculo| %>
 
     <ul>
-      <%if veiculo.alocado == TRUE%>
+      <%if veiculo.ativo == TRUE%>
         <%= image_tag("g.ico", :alt => "bus",  height: 13, width: 13) %></h1>
         <%else %><%= image_tag("r.ico", :alt => "bus",  height: 13, width: 13) %></h1>
       <% end %>
         <%= link_to veiculo.placa , veiculo_path(veiculo), class: "btn btn-default"%>
         <%= link_to "Remover "+veiculo.placa, veiculo, data: {:confirm => "Deseja remover o veículo?"}, :method => :delete, class: "btn btn-default" %>
-
     </ul>
   <% end %>
 <br>

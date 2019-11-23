@@ -76,6 +76,11 @@
     <%= form.text_field :destino, id: :viagem_destino %>
   </div>
 
+  <div class="field">
+    <%= form.label :realizada %>
+    <%= form.check_box :realizada, id: :viagem_realizada %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

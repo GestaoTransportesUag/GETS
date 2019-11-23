@@ -56,9 +56,10 @@ class UsuariosController < ApplicationController
   # DELETE /usuarios/1
   # DELETE /usuarios/1.json
   def destroy
-    @usuario.destroy
+    @usuario.ativo = false
+    @usuario.save
     respond_to do |format|
-      format.html { redirect_to usuarios_url, notice: 'O cadastro do usuário foi removido com sucesso' }
+      format.html { redirect_to usuarios_url, notice: 'O usuário foi inativado' }
       format.json { head :no_content }
     end
   end
@@ -119,6 +120,6 @@ class UsuariosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def usuario_params
-      params.require(:usuario).permit(:cpf, :nome, :senha, :email, :telefone, :capacidadeDeGerencia, :search)
+      params.require(:usuario).permit(:cpf, :nome, :senha, :email, :telefone, :capacidadeDeGerencia, :search, :ativo)
     end
 end

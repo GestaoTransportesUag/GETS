@@ -57,9 +57,10 @@ class VeiculosController < ApplicationController
   # DELETE /veiculos/1
   # DELETE /veiculos/1.json
   def destroy
-    @veiculo.destroy
+    @veiculo.ativo = false
+    @veiculo.save
     respond_to do |format|
-      format.html { redirect_to veiculos_url, notice: 'O cadastro do veículo foi removido com sucesso' }
+      format.html { redirect_to veiculos_url, notice: 'O veículo foi inativado' }
       format.json { head :no_content }
     end
   end
@@ -104,22 +105,6 @@ class VeiculosController < ApplicationController
     @veiculo.quilometragem = novaQuilometragem
   end
 
-  def getManutencaoEmDia
-    return @veiculo.manutencaoEmDia
-  end
-
-  def setManutencaoEmDia(novaManutencaoEmDia)
-    @veiculo.manutencaoEmDia = novaManutencaoEmDia
-  end
-
-  def getAlocado
-    return @veiculo.alocado
-  end
-
-  def setAlocado(novoAlocado)
-    @veiculo.alocado = novoAlocado
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_veiculo
@@ -128,6 +113,6 @@ class VeiculosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def veiculo_params
-      params.require(:veiculo).permit(:placa, :modelo, :ano, :cor, :quilometragem, :manutencaoEmDia, :alocado, :search)
+      params.require(:veiculo).permit(:placa, :modelo, :ano, :cor, :quilometragem, :search, :ativo)
     end
 end

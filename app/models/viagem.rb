@@ -24,14 +24,4 @@ class Viagem < ApplicationRecord
       Viagem.all
     end
   end
-
-  public
-  def confirmarRealizacao
-    veiculo = self.veiculo
-    veiculo.setAlocado(false)
-    veiculo.save
-    motorista = self.motorista
-    motorista.setFolga(true)
-    motorista.save
-  end
 end
