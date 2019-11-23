@@ -1,6 +1,11 @@
+<div class="jumbotron text-center">
+  <h1>Login  <%= image_tag("key.png", :alt => "bus",  height: 55, width: 55) %></h1>
+  <p>Use seu email e senha para ter acesso ao sistema</p>
+</div>
 
+<div class="container">
+  <div class="jumbotron">
 <p id="alert"><%= alert %></p>
-<h1>Login</h1>
 <%= form_tag sessions_path do |form| %>
   <div class="field">
     <%= label_tag :email %>
@@ -14,3 +19,5 @@
     <%= submit_tag "Login" %>
   </div>
 <% end %>
+  </div>
+</div>

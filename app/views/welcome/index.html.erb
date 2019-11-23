@@ -8,7 +8,7 @@
     Logged in as <%= current_user.email %>.
     <%= link_to "DESCONECTAR", logout_path %>
   <% else %>
-    <%= link_to "SE CADASTRAR", signup_path %> ou
+    <%= link_to "CADASTRAR", signup_path %> ou
     <%= link_to "ENTRAR", login_path %>
   <% end %>
   <p id=”notice”><%= notice %></p>
