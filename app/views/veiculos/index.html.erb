@@ -1,5 +1,6 @@
+<%if current_user.capacidadeDeGerencia == TRUE %>
 
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
 <div class = "jumbotron text-center">
   <h1>Veículos <%= image_tag("car.png", :alt => "bus",  height: 55, width: 55) %></h1>
@@ -39,3 +40,4 @@
   </div>
 </div>
 
+<% end %>

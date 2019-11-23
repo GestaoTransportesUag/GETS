@@ -1,4 +1,7 @@
-<div class="jumbotron text-center">
+<%if current_user.capacidadeDeGerencia == TRUE %>
+
+
+  <div class="jumbotron text-center">
   <h1>Editar manuntenções</h1>
   <p>Página para editar as informações de uma manutenção já existente</p>
 </div>
@@ -10,3 +13,5 @@
 <%= link_to 'Voltar', manutencaos_path, class:"btn btn-default" %>
   </div>
 </div>
+
+<% end %>

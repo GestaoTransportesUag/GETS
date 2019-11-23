@@ -11,21 +11,27 @@
   </head>
 
   <body>
+  <%if current_user %>
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="#"> <%= link_to "Página Inicial", welcome_index_path, class: "navbar-brand" %></a>
       </div>
       <ul class="nav navbar-nav">
-        <li><%= link_to 'Veiculos', veiculos_path %></li>
-        <li><%= link_to 'Usuarios', usuarios_path %></li>
+        <%if current_user.capacidadeDeGerencia == TRUE %>
+          <li><%= link_to 'Veiculos', veiculos_path %></li>
+          <li><%= link_to 'Usuarios', usuarios_path %></li>
+        <% end %>
         <li><%= link_to 'Motoristas', motorista_index_path %></li>
         <li><%= link_to 'Viagens', viagems_path %></li>
-        <li><%= link_to 'Manutenções', manutencaos_path %></li>
+        <%if current_user.capacidadeDeGerencia == TRUE %>
+          <li><%= link_to 'Manutenções', manutencaos_path %></li>
+        <% end %>
+
       </ul>
     </div>
   </nav>
-
+  <% end %>
 
   <section class="container">
       <div id="flash">

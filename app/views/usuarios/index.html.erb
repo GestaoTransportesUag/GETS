@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<%if current_user.capacidadeDeGerencia == TRUE %>
+
+  <p id="notice"><%= notice %></p>
 <div class = "jumbotron text-center">
   <h1>Usuários <%= image_tag("user.png", :alt => "bus",  height: 55, width: 55) %></h1>
   <p1>Página principal que lista por nome e gerencia os usuários já cadastrados</p1>
@@ -29,3 +31,5 @@
 </ul>
   </div>
 </div>
+
+<% end %>

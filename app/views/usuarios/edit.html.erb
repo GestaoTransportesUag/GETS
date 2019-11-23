@@ -1,4 +1,6 @@
-<div class="jumbotron text-center">
+<%if current_user.capacidadeDeGerencia == TRUE %>
+
+  <div class="jumbotron text-center">
   <h1>Editar usuários</h1>
   <p>Página para editar as informações de um usuário já cadastrado</p>
 </div>
@@ -10,3 +12,5 @@
 <%= link_to 'Voltar', usuarios_path, class: "btn btn-default" %>
   </div>
 </div>
+
+<% end %>
