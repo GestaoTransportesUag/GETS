@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<%if current_user.capacidadeDeGerencia == TRUE %>
+
+  <p id="notice"><%= notice %></p>
 <div class = "jumbotron text-center">
   <h1>Manutenções <%= image_tag("tool.png", :alt => "bus",  height: 55, width: 55) %></h1>
   <p>Página principal que lista por placa e os veículos que precisam de alguma manutenção</p>
@@ -26,3 +28,5 @@
 <%= link_to 'Agendar manutenção', new_manutencao_path, class:"btn btn-default" %>
     </div>
   </div>
+
+<% end %>

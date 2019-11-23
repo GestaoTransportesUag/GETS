@@ -1,4 +1,6 @@
-<div class="jumbotron text-center">
+<%if current_user.capacidadeDeGerencia == TRUE %>
+
+  <div class="jumbotron text-center">
   <h1>Agendar manutenção</h1>
   <p>Página para agendar futuras manutenções para cada véiculo já existinte</p>
 </div>
@@ -9,3 +11,5 @@
 <%= link_to 'Voltar', manutencaos_path, class:"btn btn-default" %>
   </div>
 </div>
+
+<% end %>

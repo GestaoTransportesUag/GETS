@@ -1,4 +1,6 @@
-<div class = "jumbotron text-center">
+<%if current_user.capacidadeDeGerencia == TRUE %>
+
+  <div class = "jumbotron text-center">
   <p id="notice"><%= notice %></p>
     <h1>Informações do usuário</h1>
   </br>
@@ -45,3 +47,5 @@
 
   </div>
 </div>
+
+<% end %>
