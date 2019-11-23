@@ -30,6 +30,11 @@
   <%= @motorista.telefone %>
 </p>
 
+<p>
+  <strong>Ativo:</strong>
+  <%= @motorista.ativo %>
+</p>
+
 <%= link_to 'Folga compensada', motorista_index_path, class:"btn btn-default", :onclick => @motorista.folgaCompensada %>
 <%= link_to 'Editar', edit_motorista_path(@motorista), class:"btn btn-default" %>
 <%= link_to 'Voltar', motorista_index_path, class:"btn btn-default" %>

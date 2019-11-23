@@ -33,13 +33,13 @@ class ViagemsController < ApplicationController
   # POST /viagems.json
   def create
     @viagem = Viagem.new(viagem_params)
-
     respond_to do |format|
       if @viagem.save
         format.html { redirect_to @viagem, notice: 'Viagem foi agendada com sucesso' }
         format.json { render :show, status: :created, location: @viagem }
-        @veiculo = @viagem.veiculo
-        @veiculo.setAlocado(true)
+        id = @viagem.veiculo.id
+        @veiculo = Veiculo.find_by(id: id)
+        @veiculo.alocado = true
         @veiculo.save
       else
         format.html { render :new }

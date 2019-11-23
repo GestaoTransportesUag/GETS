@@ -56,9 +56,10 @@ class MotoristaController < ApplicationController
   # DELETE /motorista/1
   # DELETE /motorista/1.json
   def destroy
-    @motorista.destroy
+    @motorista.ativo = false
+    @motorista.save
     respond_to do |format|
-      format.html { redirect_to motorista_index_url, notice: 'O cadastro do motorista foi removido com sucesso' }
+      format.html { redirect_to motorista_index_url, notice: 'O motorista foi inativado' }
       format.json { head :no_content }
     end
   end
@@ -75,6 +76,6 @@ class MotoristaController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def motorista_params
-      params.require(:motorista).permit(:cpf, :nome, :diasDeFolga, :bancoDeHoras, :telefone)
+      params.require(:motorista).permit(:cpf, :nome, :diasDeFolga, :bancoDeHoras, :telefone, :ativo)
     end
 end

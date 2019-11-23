@@ -29,7 +29,6 @@
       <% end %>
         <%= link_to veiculo.placa , veiculo_path(veiculo), class: "btn btn-default"%>
         <%= link_to "Remover "+veiculo.placa, veiculo, data: {:confirm => "Deseja remover o veículo?"}, :method => :delete, class: "btn btn-default" %>
-
     </ul>
   <% end %>
 <br>

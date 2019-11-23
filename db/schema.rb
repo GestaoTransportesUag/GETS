@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191101124242) do
+ActiveRecord::Schema.define(version: 20191101114125) do
 
   create_table "manutencaos", force: :cascade do |t|
     t.integer "usuario_id"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20191101124242) do
     t.date "diasDeFolga"
     t.boolean "bancoDeHoras"
     t.bigint "telefone"
+    t.boolean "ativo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,6 +43,7 @@ ActiveRecord::Schema.define(version: 20191101124242) do
     t.string "email"
     t.integer "telefone", limit: 8
     t.boolean "capacidadeDeGerencia"
+    t.boolean "ativo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -54,6 +56,7 @@ ActiveRecord::Schema.define(version: 20191101124242) do
     t.bigint "quilometragem"
     t.boolean "manutencaoEmDia"
     t.boolean "alocado"
+    t.boolean "ativo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -40,6 +40,11 @@
   <%= @veiculo.alocado %>
 </p>
 
+  <p>
+    <strong>Ativo:</strong>
+    <%= @veiculo.ativo %>
+  </p>
+
 <%= link_to 'Editar', edit_veiculo_path(@veiculo), class: "btn btn-default" %>
 <%= link_to 'Voltar', veiculos_path, class: "btn btn-default"%>
 </div>

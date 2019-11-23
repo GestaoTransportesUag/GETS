@@ -6,6 +6,7 @@ class CreateMotorista < ActiveRecord::Migration[5.1]
       t.date :diasDeFolga
       t.boolean :bancoDeHoras
       t.bigint :telefone
+      t.boolean :ativo
 
       t.timestamps
     end

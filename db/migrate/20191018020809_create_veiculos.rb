@@ -8,6 +8,7 @@ class CreateVeiculos < ActiveRecord::Migration[5.1]
       t.bigint :quilometragem
       t.boolean :manutencaoEmDia
       t.boolean :alocado
+      t.boolean :ativo
       t.timestamps
     end
   end
