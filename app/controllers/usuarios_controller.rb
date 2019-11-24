@@ -27,11 +27,20 @@ class UsuariosController < ApplicationController
   # POST /usuarios.json
   def create
     @usuario = Usuario.new(usuario_params)
-
+    @usuarios = Usuario.all
+    if @usuarios.size == 0
+      @usuario.capacidadeDeGerencia = true
+    else
+      @usuario.capacidadeDeGerencia = false
+    end
     respond_to do |format|
       if @usuario.save
+        if @usuarios.size == 1
+          format.html { redirect_to root_url}
+        else
         format.html { redirect_to @usuario, notice: 'Usuário cadastrado com sucesso' }
         format.json { render :show, status: :created, location: @usuario }
+        end
       else
         format.html { render :new }
         format.json { render json: @usuario.errors, status: :unprocessable_entity }

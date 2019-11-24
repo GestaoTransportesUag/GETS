@@ -6,10 +6,10 @@
 <div class="jumbotron text-center">
   <% if current_user %>
     Logged in as <%= current_user.email %>.
-    <%= link_to "DESCONECTAR", logout_path %>
+    <%= link_to "DESCONECTAR", logout_path, class:"btn btn-default" %>
   <% else %>
-    <%= link_to "CADASTRAR", signup_path %> ou
-    <%= link_to "ENTRAR", login_path %>
+    <%= link_to "CADASTRAR", signup_path, class: "btn btn-default" %> ou
+    <%= link_to "ENTRAR", login_path, class: "btn btn-default" %>
   <% end %>
   <p id=”notice”><%= notice %></p>
 </div>
