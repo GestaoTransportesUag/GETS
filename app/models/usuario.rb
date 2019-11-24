@@ -5,6 +5,11 @@ class Usuario < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :telefone, presence: true, numericality: true
 
+  public
+  def self.gerente
+    return self.capacidadeDeGerencia
+  end
+
   def self.search(search)
     if search
       usuario = Usuario.find_by(nome: search)
