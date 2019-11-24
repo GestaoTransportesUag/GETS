@@ -72,7 +72,7 @@ Then("eu devo ver que o veiculo agora tem a placa {string}, modelo {string}, ano
 end
 
 When("eu clico no botao Editar") do
-  click_link 'Editar'
+  click_on 'Editar'
 end
 
 Then("eu devo ver que o veiculo com a placa {string} tem as informacoes corretas") do |placa|
