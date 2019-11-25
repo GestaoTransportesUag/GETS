@@ -25,17 +25,17 @@ When("eu clico em Create Motorista") do
   click_button 'Create Motorista'
 end
 
-When("eu vejo um motorista com cpf {string} ja existente") do |cpf|
+When("eu vejo um motorista com nome {string} ja existente") do |nome|
   visit '/motorista'
   expect(page).to have_content("Motoristas")
   click_link 'Novo Motorista'
-  fill_in 'motorista[cpf]', :with => cpf
-  fill_in 'motorista[nome]', :with => "Marinho"
-  fill_in 'motorista[telefone]', :with => "999999999"
+  fill_in 'motorista[cpf]', :with => "11111111111"
+  fill_in 'motorista[nome]', :with => nome
+  fill_in 'motorista[telefone]', :with => "99836613"
   check('motorista[ativo]')
   click_button 'Create Motorista'
   visit '/motorista'
-  expect(page).to have_selector(:link_or_button, cpf)
+  expect(page).to have_selector(:link_or_button, nome)
 end
 
 When("eu clico no botao remover motorista {string}") do |nome|
@@ -43,20 +43,7 @@ When("eu clico no botao remover motorista {string}") do |nome|
   click_on 'Remover '+nome
 end
 
-Then("eu devo ver que o motorista com cpf {string} foi adicionado corretamente") do |nome|
-  visit '/motorista'
-  expect(page).to have_selector(:link_or_button, nome)
-end
-
-When("eu vejo um motorista com nome {string} ja existente") do |nome|
-  visit '/motorista'
-  expect(page).to have_content("Motoristas")
-  click_link 'Novo Motorista'
-  fill_in 'motorista[cpf]', :with => '11111111111'
-  fill_in 'motorista[nome]', :with => nome
-  fill_in 'motorista[telefone]', :with => '99836613'
-  check('motorista[ativo]')
-  click_button 'Create Motorista'
+Then("eu devo ver que o motorista com nome {string} foi adicionado corretamente") do |nome|
   visit '/motorista'
   expect(page).to have_selector(:link_or_button, nome)
 end

@@ -11,7 +11,7 @@ Feature: Motorista
     And estou na pagina de adicionar um motorista
     And eu preencho os campos CPF com "22222222222", nome com "Marta", telefone "99836613" e ativo
     And eu clico em Create Motorista
-    Then eu devo ver que o motorista com cpf "22222222222" foi adicionado corretamente
+    Then eu devo ver que o motorista com nome "Marta" foi adicionado corretamente
 
   Scenario: remover corretamente um motorista
     adicionar corretamente um motorista
