@@ -1,9 +1,9 @@
 When("eu clico no link chamado Usuarios") do
-  click_link 'Usuarios'
+  visit '/usuarios'
 end
 
 When("estou na pagina que lista usuarios") do
-  expect(page).to have_content("Usuarios")
+  expect(page).to have_content("Usuários")
 end
 
 When("eu clico em CADASTRAR") do
@@ -86,13 +86,18 @@ Then("eu devo ver que o usuario agora tem o nome {string}") do |nome|
 end
 
 Then("eu devo ver que o usuario com nome {string} tem as informacoes corretas") do |nome|
+  click_on nome
   expect(page).to have_content(nome)
-  expect(page).to have_content('70526991410')
+  expect(page).to have_content('11111111111')
   expect(page).to have_content('123456')
   expect(page).to have_content('99836613')
-  expect(page).to have_content('arnaldovitorbarros@gmail.com')
+  expect(page).to have_content('teste@gmail.com')
 end
 
 Then("eu vejo uma mensagem de erro indicando que o usuario nao pode ser cadastrado") do
   expect(page).to have_content('Cpf is the wrong length')
+end
+
+When("eu clico em Novo usuario") do
+  click_on 'Novo usuário'
 end
