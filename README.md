@@ -1,5 +1,9 @@
 # **GETS (Gerenciador de Transportes)**
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c5464d04db5b4bf59a11c2bc94eea3e9)](https://www.codacy.com/manual/VitorAlan/GETS?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=VitorAlan/GETS&amp;utm_campaign=Badge_Grade)
+[![build status](
+  http://img.shields.io/travis/GestaoTransportesUag/GETS/master.svg?style=flat)](
+ https://travis-ci.org/GestaoTransportesUag/GETS)
 ## Informações do nosso time:
 
 **Time:**
