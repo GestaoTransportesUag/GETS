@@ -1,5 +1,5 @@
 When ("eu clico no link chamado Viagens") do
-  click_link 'Viagens'
+  visit '/viagems'
 end
 
 When("estou na pagina que lista viagens") do
@@ -15,7 +15,7 @@ When("estou na pagina de agendar uma viagem") do
 end
 
 When("eu preencho os campos de usuario com {string}, veiculo com {string}, motorista com {string}, distancia percorrida com {string}, finalidade com {string}, nome do requisitor com {string}, funcao do requisitor com {string}, cpf do requisitor com {string}, numero de acompanhantes com {string}, data de partida com {string}, data de chegada com {string} e destino com {string}") do |usuario, veiculo, motorista, distancia, finalidade, nome, funcao, cpf, numeroacompanhantes, datapartida, datachegada, destino|
-  click_link 'Veiculos'
+  visit '/veiculos'
   click_link 'Novo veículo'
   fill_in 'veiculo[placa]', :with => veiculo
   select "trator", :from => "veiculo[modelo]"
@@ -24,7 +24,7 @@ When("eu preencho os campos de usuario com {string}, veiculo com {string}, motor
   fill_in 'veiculo[quilometragem]', :with => "10000"
   click_button 'Create Veiculo'
 
-  click_link 'Usuarios'
+  visit '/usuarios'
   click_link 'Novo usuário'
   fill_in 'usuario[cpf]', :with => "11111111111"
   fill_in 'usuario[nome]', :with => usuario
@@ -33,14 +33,14 @@ When("eu preencho os campos de usuario com {string}, veiculo com {string}, motor
   fill_in 'usuario[telefone]', :with => "000000000"
   click_button 'Create Usuario'
 
-  click_link 'Motoristas'
+  visit '/motorista'
   click_link 'Novo Motorista'
   fill_in 'motorista[cpf]', :with => "11111111112"
   fill_in 'motorista[nome]', :with => motorista
   fill_in 'motorista[telefone]', :with => "111111111"
   click_button 'Create Motorista'
 
-  click_link 'Viagens'
+  visit '/viagems'
   click_link 'Agendar viagem'
   select usuario
   select veiculo
@@ -67,7 +67,7 @@ Then("eu devo ver que a viagem com destino {string} foi agendada corretamente") 
 end
 
 When("eu vejo uma viagem com destino {string} ja existente") do |destino|
-  click_link 'Veiculos'
+  visit '/veiculos'
   click_link 'Novo veículo'
   fill_in 'veiculo[placa]', :with => "HX576CA"
   select "trator", :from => "veiculo[modelo]"
@@ -76,7 +76,7 @@ When("eu vejo uma viagem com destino {string} ja existente") do |destino|
   fill_in 'veiculo[quilometragem]', :with => "10000"
   click_button 'Create Veiculo'
 
-  click_link 'Usuarios'
+  visit '/usuarios'
   click_link 'Novo usuário'
   fill_in 'usuario[cpf]', :with => "11111111111"
   fill_in 'usuario[nome]', :with => "Teste"
@@ -85,14 +85,14 @@ When("eu vejo uma viagem com destino {string} ja existente") do |destino|
   fill_in 'usuario[telefone]', :with => "000000000"
   click_button 'Create Usuario'
 
-  click_link 'Motoristas'
+  visit '/motorista'
   click_link 'Novo Motorista'
   fill_in 'motorista[cpf]', :with => "11111111112"
   fill_in 'motorista[nome]', :with => "Marta"
   fill_in 'motorista[telefone]', :with => "111111111"
   click_button 'Create Motorista'
 
-  click_link 'Viagens'
+  visit '/viagems'
   click_link 'Agendar viagem'
   select "Teste"
   select "HX576CA"
@@ -169,8 +169,8 @@ Then("eu devo ver que a viagem com o destino {string} tem as informacoes correta
   expect(page).to have_content("finalidade")
 end
 
-When("eu preencho os campos de usuario com {string}, veiculo com {string} , motorista com {string}, distancia percorrida com {string}, finalidade com {string}, nome do requisitor com {string}, funcao do requisitor com {string}, cpf do requisitor com {string}, numero de acompanhantes com {string}, data de partida com {string}, data de chegada com {string}") do |usuario, veiculo, motorista, distancia, finalidade, nome, funcao, cpf, numeroacompanhantes, datapartida, datachegada|
-  click_link 'Veiculos'
+When("eu preencho os campos de usuario com {string}, veiculo com {string}, motorista com {string}, distancia percorrida com {string}, finalidade com {string}, nome do requisitor com {string}, funcao do requisitor com {string}, cpf do requisitor com {string}, numero de acompanhantes com {string}, data de partida com {string}, data de chegada com {string}") do |usuario, veiculo, motorista, distancia, finalidade, nome, funcao, cpf, numeroacompanhantes, datapartida, datachegada|
+  visit '/veiculos'
   click_link 'Novo veículo'
   fill_in 'veiculo[placa]', :with => veiculo
   select "trator", :from => "veiculo[modelo]"
@@ -179,7 +179,7 @@ When("eu preencho os campos de usuario com {string}, veiculo com {string} , moto
   fill_in 'veiculo[quilometragem]', :with => "10000"
   click_button 'Create Veiculo'
 
-  click_link 'Usuarios'
+  visit '/usuarios'
   click_link 'Novo usuário'
   fill_in 'usuario[cpf]', :with => "11111111111"
   fill_in 'usuario[nome]', :with => usuario
@@ -188,18 +188,18 @@ When("eu preencho os campos de usuario com {string}, veiculo com {string} , moto
   fill_in 'usuario[telefone]', :with => "000000000"
   click_button 'Create Usuario'
 
-  click_link 'Motoristas'
+  visit '/motorista'
   click_link 'Novo Motorista'
   fill_in 'motorista[cpf]', :with => "11111111112"
   fill_in 'motorista[nome]', :with => motorista
   fill_in 'motorista[telefone]', :with => "111111111"
   click_button 'Create Motorista'
 
-  click_link 'Viagens'
+  visit '/viagems'
   click_link 'Agendar viagem'
-
   select usuario
   select veiculo
+  select motorista
   fill_in 'viagem[distanciaPercorrida]', :with => distancia
   fill_in 'viagem[finalidade]', :with => finalidade
   fill_in 'viagem[nomeRequisor]', :with => nome
@@ -211,5 +211,5 @@ When("eu preencho os campos de usuario com {string}, veiculo com {string} , moto
 end
 
 Then("eu vejo uma mensagem de erro indicando que a viagem nao pode ser agendada") do
-  expect(page).to have_content('Motorista must exist')
+  expect(page).to have_content("Destino can't be blank")
 end
