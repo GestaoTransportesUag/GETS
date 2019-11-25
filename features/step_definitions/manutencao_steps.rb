@@ -1,5 +1,5 @@
 When("eu clico no link chamado Manutencoes") do
-  click_link "Manutenções"
+  visit "/manutencaos"
 end
 
 When("estou na pagina que lista manutencoes") do
@@ -15,7 +15,7 @@ When("estou na pagina de agendar uma manutencao") do
 end
 
 When("eu preencho os campos de usuario com {string}, veiculo com {string}, descricao com {string}, custo com {string}, realizado em com {string} e realizado quando com {string}") do |usuario, veiculo, descricao, custo, realizado, data|
-  click_link 'Usuarios'
+  visit '/usuarios'
   click_link 'Novo usuário'
   fill_in 'usuario[cpf]', :with => "11111111111"
   fill_in 'usuario[nome]', :with => usuario
@@ -24,7 +24,7 @@ When("eu preencho os campos de usuario com {string}, veiculo com {string}, descr
   fill_in 'usuario[telefone]', :with => "100000000"
   click_button 'Create Usuario'
 
-  click_link 'Veiculos'
+  visit '/veiculos'
   click_link 'Novo veículo'
   fill_in 'veiculo[placa]', :with => veiculo
   select "trator", :from => "veiculo[modelo]"
@@ -33,7 +33,7 @@ When("eu preencho os campos de usuario com {string}, veiculo com {string}, descr
   fill_in 'veiculo[quilometragem]', :with => "10000"
   click_button 'Create Veiculo'
 
-  click_link 'Manutenções'
+  visit '/manutencaos'
   click_link 'Agendar manutenção'
   select usuario
   select veiculo
@@ -53,7 +53,7 @@ Then("eu devo ver que a manutencao com descricao {string} foi agendada corretame
 end
 
 When("eu vejo uma manutencao com descricao {string} ja existente") do |descricao|
-  click_link 'Usuarios'
+  visit '/usuarios'
   click_link 'Novo usuário'
   fill_in 'usuario[cpf]', :with => "11111111111"
   fill_in 'usuario[nome]', :with => "Teste"
@@ -62,7 +62,7 @@ When("eu vejo uma manutencao com descricao {string} ja existente") do |descricao
   fill_in 'usuario[telefone]', :with => "100000000"
   click_button 'Create Usuario'
 
-  click_link 'Veiculos'
+  visit '/veiculos'
   click_link 'Novo veículo'
   fill_in 'veiculo[placa]', :with => "aaa1111"
   select "trator", :from => "veiculo[modelo]"
@@ -71,7 +71,7 @@ When("eu vejo uma manutencao com descricao {string} ja existente") do |descricao
   fill_in 'veiculo[quilometragem]', :with => "10000"
   click_button 'Create Veiculo'
 
-  click_link 'Manutenções'
+  visit '/manutencaos'
   click_link 'Agendar manutenção'
   select "Teste"
   select "aaa1111"
@@ -127,17 +127,17 @@ Then("eu devo ver que a manutencao com a descricao {string} tem as informacoes c
   expect(page).to have_content("2019-11-01")
 end
 
-When("eu preencho os campos de usuario com {string}, descricao com {string}, custo com {string}, realizado em com {string} e realizado quando com {string}") do |usuario, descricao, custo, realizado, data|
-  click_link 'Veiculos'
+When("eu preencho os campos de usuario com {string}, veiculo com {string}, descricao com {string}, realizado em com {string} e realizado quando com {string}") do |usuario, placa, descricao, realizado, data|
+  visit '/veiculos'
   click_link 'Novo veículo'
-  fill_in 'veiculo[placa]', :with => "HX576CA"
+  fill_in 'veiculo[placa]', :with => placa
   select "trator", :from => "veiculo[modelo]"
   fill_in 'veiculo[ano]', :with => "2010"
   fill_in 'veiculo[cor]', :with => "verde"
   fill_in 'veiculo[quilometragem]', :with => "10000"
   click_button 'Create Veiculo'
 
-  click_link 'Usuarios'
+  visit '/usuarios'
   click_link 'Novo usuário'
   fill_in 'usuario[cpf]', :with => "11111111111"
   fill_in 'usuario[nome]', :with => usuario
@@ -146,11 +146,11 @@ When("eu preencho os campos de usuario com {string}, descricao com {string}, cus
   fill_in 'usuario[telefone]', :with => "000000000"
   click_button 'Create Usuario'
 
-  click_link 'Manutenções'
+  visit '/manutencaos'
   click_link 'Agendar manutenção'
   select usuario
+  select placa
   fill_in 'manutencao[descricao]', :with => descricao
-  fill_in 'manutencao[custo]', :with => custo
   fill_in 'manutencao[realizadoEm]', :with => realizado
   fill_in 'manutencao[realizadoQuando]', :with => data
 end
