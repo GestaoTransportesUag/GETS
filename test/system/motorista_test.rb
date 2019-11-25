@@ -1,6 +1,6 @@
 require "application_system_test_case"
 
-class MotoristaTest < ApplicationSystemTestCase
+class ModelsMotoristaTest < ApplicationSystemTestCase
   # test "visiting the index" do
   #   visit motorista_url
   #
