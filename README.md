@@ -12,7 +12,7 @@
 **Integrantes:**
 * Vitor Alan ([@VitorAlan](https://github.com/VitorAlan))
 * Arnaldo Vitor ([@arnaldovitor](https://github.com/arnaldovitor))
-* Rafael Galvão ([@rafavmaciel](https://github.com/rafamaciel)) 
+* Rafael Galvão ([@rafavmaciel](https://github.com/rafavmaciel)) 
 
 
 ## Informações do projeto:
