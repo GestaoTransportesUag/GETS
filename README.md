@@ -10,8 +10,10 @@
 * [**TeamVAR**](https://github.com/orgs/GestaoTransportesUag/teams/teamvar)
 
 **Integrantes:**
-*| **V**itor Alan | **R**afael Galvão | **A**rnaldo Vitor |
-| [@VitorAlan](https://github.com/VitorAlan) | [@rafavmaciel](https://github.com/rafavmaciel) | [@arnaldovitor](https://github.com/arnaldovitor) | 
+* Vitor Alan ([@VitorAlan](https://github.com/VitorAlan))
+* Arnaldo Vitor ([@arnaldovitor](https://github.com/arnaldovitor))
+* Rafael Galvão ([@rafavmaciel](https://github.com/rafamaciel)) 
+
 
 ## Informações do projeto:
 
